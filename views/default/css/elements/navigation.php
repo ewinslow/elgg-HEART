@@ -88,6 +88,7 @@
  * To add separators to a menu:
  * .elgg-menu-$menu > li:after {content: '|'; background: ...;}
  *************************************** */
+
 /* For dropdown/flyout menus */
 .elgg-menu > li {
 	position:relative;
@@ -270,7 +271,7 @@
 
 .elgg-more > a:before {
 	content: "\25BC";
-	font-size:smaller;
+	font-size: 70%;
 	margin-right: 4px;
 }
 
@@ -293,6 +294,7 @@
 	border-bottom: 2px solid #cccccc;
 	display: table;
 	width: 100%;
+	font-weight: bold;
 }
 .elgg-menu-filter > li {
 	float: left;

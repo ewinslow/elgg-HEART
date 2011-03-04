@@ -16,7 +16,7 @@
 }
 
 body {
-	font-size: 80%;
+	font-size: 13px;
 	line-height: 1.4em;
 	font-family: "Times New Roman", serif;
 }
