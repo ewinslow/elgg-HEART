@@ -185,6 +185,10 @@
 /* ***************************************
 	SITE MENU
 *************************************** */
+.elgg-menu-site-default {
+	font-family: "Colonna MT Regular", serif;
+	font-size: 130%;
+}
 
 .elgg-menu-site > li > a {
 	font-weight: bold;
@@ -402,7 +406,7 @@
 .elgg-menu-footer > li,
 .elgg-menu-footer > li > a {
 	display: inline-block;
-	color:#999;
+	color:#666;
 }
 
 .elgg-menu-footer > li:after {

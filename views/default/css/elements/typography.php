@@ -18,7 +18,7 @@
 body {
 	font-size: 80%;
 	line-height: 1.4em;
-	font-family: "Lucida Grande", Arial, Tahoma, Verdana, sans-serif;
+	font-family: "Times New Roman", serif;
 }
 pre, code {
 	font-family: Monaco, "Courier New", Courier, monospace;
