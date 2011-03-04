@@ -1,7 +1,5 @@
 <p class="clearfloat center mtl">
 	<small>
-		HEART is a registered TRUST in Kenya and has a fully qualified board of Kenyan Directors
-		who work with the American counterpart of HEART a 501 C-3 organization comprised of American
-		health professionals and concerned business leaders.
+		<?php echo elgg_get_plugin_setting('footer_text', 'HEART'); ?>
 	</small>
 </p>
