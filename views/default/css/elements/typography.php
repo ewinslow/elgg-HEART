@@ -10,6 +10,11 @@
 /* ***************************************
 	Typography
 *************************************** */
+@font-face {
+	font-family: "Colonna MT Regular";
+	src: url("<?php echo elgg_get_site_url(); ?>mod/HEART/fonts/Colonna_MT_Regular.ttf");
+}
+
 body {
 	font-size: 80%;
 	line-height: 1.4em;
@@ -27,9 +32,7 @@ blockquote {
 }
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
-	color: #bd6817;
 }
-
 h1 { font-size: 1.8em; }
 h2 { font-size: 1.5em; line-height: 1.1em; }
 h3 { font-size: 1.2em; }
@@ -41,14 +44,21 @@ h6 { font-size: 0.8em; }
 	font-family: Monaco, "Courier New", Courier, monospace;
 }
 
-.elgg-heading-site, .elgg-heading-site:hover {
-	font-size: 2em;
-	line-height: 1.4em;
+a:hover {text-decoration:none !important}
+
+.elgg-heading-site {
 	color: white;
-	font-family: Georgia, times, serif;
+	font-style: italic;
+	line-height: 1.2em;
+	font-family: "Colonna MT Regular", Georgia, times, serif;
 	text-shadow: 1px 2px 4px #333333;
-	text-decoration: none;
 }
+
+h1.elgg-heading-site {
+	font-size: 3.6em;
+}
+
+.elgg-heading-site:hover {	text-decoration: none}
 .elgg-heading-main {
 	float: left;
 	max-width: 530px;

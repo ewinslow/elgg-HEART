@@ -54,13 +54,11 @@
 .elgg-tabs li {
 	float: left;
 	border: 2px solid #cccccc;
-	border-bottom-width: 0;
+	border-bottom: 0;
 	background: #eeeeee;
 	margin: 0 0 0 10px;
-	-moz-border-radius-topleft: 5px;
-	-moz-border-radius-topright: 5px;
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
 }
 .elgg-tabs a {
 	text-decoration: none;
@@ -85,6 +83,47 @@
 }
 
 /* ***************************************
+ * MENUS
+ *
+ * To add separators to a menu:
+ * .elgg-menu-$menu > li:after {content: '|'; background: ...;}
+ *************************************** */
+/* For dropdown/flyout menus */
+.elgg-menu > li {
+	position:relative;
+}
+
+/* For separators */
+.elgg-menu > li:last-child:after {
+	display:none
+}
+
+/* Maximize click target */
+.elgg-menu > li > a {
+	display:block
+}
+
+/* Image placement correction */
+.elgg-menu img,
+.elgg-menu .elgg-icon {
+	vertical-align: middle;
+	margin-top: -2px;
+}
+
+/* Horizontal menus w/ separator support */
+.elgg-menu-hz > li,
+.elgg-menu-hz > li:after,
+.elgg-menu-hz > li > a {
+	display:inline-block;
+	vertical-align:middle;
+}
+
+/* Allow inline image blocks in horizontal menus */
+.elgg-menu-hz .elgg-body:after {
+	content: '.';
+}
+
+/* ***************************************
 	BREADCRUMBS
 *************************************** */
 .elgg-breadcrumbs {
@@ -93,25 +132,23 @@
 	line-height: 1.2em;
 	color: #bababa;
 }
-.elgg-breadcrumbs li {
-	display: inline;
-}
-.elgg-breadcrumbs li:after{
-	content: "\003E";
+.elgg-breadcrumbs > li {
 	display: inline-block;
-	padding: 0 4px 0 4px;
+}
+.elgg-breadcrumbs > li:after{
+	content: "\003E";
+	padding: 0 4px;
 	font-weight: normal;
 }
-.elgg-breadcrumbs li:last-child:after {
-	content: "";
-}
-.elgg-breadcrumbs a {
+.elgg-breadcrumbs > li > a {
+	display: inline-block;
 	color: #999999;
 }
-.elgg-breadcrumbs a:hover {
+.elgg-breadcrumbs > li > a:hover {
 	color: #0054a7;
 	text-decoration: underline;
 }
+
 .elgg-main .elgg-breadcrumbs {
 	position: relative;
 	top: -6px;
@@ -119,87 +156,169 @@
 }
 
 /* ***************************************
+	TOPBAR MENU
+*************************************** */
+.elgg-menu-topbar {
+	float: left;
+}
+
+.elgg-menu-topbar > li {
+	float:left;
+}
+
+.elgg-menu-topbar > li > a {
+	padding: 2px 15px;
+	color: #eeeeee;
+	margin-top: 2px;
+	line-height: 1.1em;
+}
+
+.elgg-menu-topbar > li > a:hover {
+	color: #71cbff;
+	text-decoration: none;
+}
+
+.elgg-menu-topbar-alt {
+	float:right;
+}
+
+/* ***************************************
 	SITE MENU
 *************************************** */
-.elgg-menu-site {
-	position: absolute;
-	height: 23px;
-	bottom: 0;
-	left: 5px;
-	width: auto;
-	z-index: 7000;
-}
-.elgg-menu-site li {
-	display: block;
-	float: left;
-	height: 23px;
-}
-.elgg-menu-site > li {
-	margin-right: 1px;
-}
-.elgg-menu-site a {
-	color: white;
+
+.elgg-menu-site > li > a {
 	font-weight: bold;
 	padding: 3px 13px 0px 13px;
 	height: 20px;
-	display: block;
 }
-.elgg-menu-site li.elgg-state-selected a,
-.elgg-menu-site li a:hover,
-.elgg-menu-site .elgg-more:hover a {
+
+.elgg-menu-site > li > a:hover {
 	text-decoration: none;
-	background: #F5E7B6;
-	color: #555555;
-	-webkit-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
+}
+
+
+.elgg-menu-site-default {
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	height: 23px;
+}
+
+.elgg-menu-site-default > li {
+	float: left;
+	margin-right: 1px;
+}
+
+.elgg-menu-site-default > li > a {color: white}
+
+
+.elgg-menu-site-default > .elgg-state-selected > a,
+.elgg-menu-site-default > li:hover > a {
+	background: #f5e7b6;
+	color: #663600;
 	-moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
-	-moz-border-radius-topleft: 4px;
-	-moz-border-radius-topright: 4px;
-	-webkit-border-top-left-radius: 4px;
-	-webkit-border-top-right-radius: 4px;
+	-webkit-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
 }
-.elgg-menu-site .elgg-more {
-	overflow: hidden;
-}
-.elgg-menu-site .elgg-more:hover {
-	overflow: visible;
-}
-.elgg-menu-site .elgg-more:hover span {
-	background-position: -146px -76px;
-}
-.elgg-menu-site .elgg-more ul {
-	z-index: 7000;
+
+.elgg-more > a {position:relative; z-index: 3}
+.elgg-more > ul {z-index: 2}
+
+.elgg-menu-site-more {
+	/* This can probably be abstracted to elgg-menu-dropdown */
+	display:none;
+	position:absolute;
+	left: -1px;
+	top: 100%;
+	margin-top: -1px;
 	min-width: 150px;
-	border-left: 1px solid #999999;
-	border-right: 1px solid #999999;
-	border-bottom: 1px solid #999999;
-	-moz-border-radius-bottomleft: 4px;
-	-moz-border-radius-bottomright: 4px;
-	-webkit-border-bottom-left-radius: 4px;
-	-webkit-border-bottom-right-radius: 4px;
-	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+
+	border: 1px solid #7d0b00;
+	-moz-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
 	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
-.elgg-menu-site .elgg-more ul li {
-	float: none;
+
+:hover > .elgg-menu-site-more {
+	display:block;
 }
-.elgg-menu-site .elgg-more:hover ul li a {
-	background: white;
-	color: #483E25;
+
+.elgg-menu-site-more > li > a {
+	background: #f5e7b6;
+	color: #663600;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 }
-.elgg-menu-site .elgg-more ul li a:hover {
-	background: #F5E7B6;
-	color: #483E25;
+.elgg-menu-site-more > li > a:hover {
+	background: #7d0b00;
+	color: white;
 }
-.elgg-menu-site .elgg-more ul li:last-child a,
-.elgg-menu-site .elgg-more ul li:last-child a:hover {
-	-moz-border-radius-bottomleft: 4px;
-	-moz-border-radius-bottomright: 4px;
-	-webkit-border-bottom-left-radius: 4px;
-	-webkit-border-bottom-right-radius: 4px;
+.elgg-menu-site-more > li:last-child > a,
+.elgg-menu-site-more > li:last-child > a:hover {
+	-moz-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+}
+
+.elgg-more > a:before {
+	content: "\25BC";
+	font-size:smaller;
+	margin-right: 4px;
+}
+
+/* ***************************************
+	TITLE
+*************************************** */
+.elgg-menu-title {
+	float:right;
+}
+
+.elgg-menu-title > li {
+	display:inline-block
+}
+
+/* ***************************************
+	FILTER MENU
+*************************************** */
+.elgg-menu-filter {
+	margin-bottom: 5px;
+	border-bottom: 2px solid #cccccc;
+	display: table;
+	width: 100%;
+}
+.elgg-menu-filter > li {
+	float: left;
+	border: 2px solid #cccccc;
+	border-bottom: 0;
+	background: #eeeeee;
+	margin: 0 0 0 10px;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+}
+.elgg-menu-filter > li > a {
+	text-decoration: none;
+	display: block;
+	padding: 3px 10px 0 10px;
+	text-align: center;
+	height: 21px;
+	color: #999999;
+}
+.elgg-menu-filter > li > a:hover {
+	background: #dedede;
+	color:#4690D6;
+}
+.elgg-menu-filter > .elgg-state-selected {
+	border-color: #cccccc;
+	background: white;
+}
+.elgg-menu-filter > .elgg-state-selected > a {
+	position: relative;
+	top: 2px;
+	background: white;
 }
 
 /* ***************************************
@@ -246,10 +365,8 @@
 	z-index: 10000;
 
 	width: 165px;
-	border-top: solid 1px #E5E5E5;
-	border-left: solid 1px #E5E5E5;
-	border-right: solid 1px #999999;
-	border-bottom: solid 1px #999999;
+	border: solid 1px;
+	border-color: #E5E5E5 #999 #999 #E5E5E5;
 	background-color: #FFFFFF;
 	-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.50);
 	-moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.50);
@@ -264,7 +381,6 @@
 	display: block;
 }
 .elgg-menu-hover a {
-	display: block;
 	padding: 2px 8px;
 	font-size: 92%;
 }
@@ -272,10 +388,10 @@
 	background: #cccccc;
 	text-decoration: none;
 }
-.elgg-hover-admin a {
+.elgg-menu-hover-admin a {
 	color: red;
 }
-.elgg-hover-admin a:hover {
+.elgg-menu-hover-admin a:hover {
 	color: white;
 	background-color: red;
 }
@@ -283,15 +399,57 @@
 /* ***************************************
 	FOOTER
 *************************************** */
-.elgg-menu-footer li {
-	float: left;
-}
-.elgg-menu-footer li:after {
-	content: "\007C";
+.elgg-menu-footer > li,
+.elgg-menu-footer > li > a {
 	display: inline-block;
-	padding: 0 4px 0 4px;
-	font-weight: normal;
+	color:#999;
 }
-.elgg-menu-footer li:last-child:after {
-	content: "";
+
+.elgg-menu-footer > li:after {
+	content: "\007C";
+	padding: 0 4px;
+}
+
+.elgg-menu-footer-alt {
+	float: right;
+}
+
+/* ***************************************
+	ENTITY METADATA
+*************************************** */
+.elgg-menu-metadata {
+	float: right;
+	margin-left: 15px;
+	font-size: 90%;
+	color: #aaa;
+}
+.elgg-menu-metadata > li {
+	display: inline-block;
+	margin-left: 15px;
+}
+.elgg-menu-metadata > li > a {
+	color: #aaa;
+}
+
+/* ***************************************
+	LONGTEXT
+*************************************** */
+.elgg-menu-owner_block > li {
+	float: left;
+	width: 50%;
+	font-size: 90%;
+}
+
+/* ***************************************
+	LONGTEXT
+*************************************** */
+.elgg-menu-longtext {
+	float: right;
+}
+
+/* ***************************************
+	RIVER
+*************************************** */
+.elgg-menu-river {
+	font-size: 90%;
 }
