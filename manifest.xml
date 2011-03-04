@@ -10,5 +10,10 @@
 		<type>elgg_version</type>
 		<version>2011010401</version>
 	</requires>
-	<admin_interface>advanced</admin_interface>
+	<requires>
+		<type>priority</type>
+		<plugin>custom_index</plugin>
+		<priority>after</priority>
+	</requires>
+	<admin_interface>basic</admin_interface>
 </plugin_manifest>
