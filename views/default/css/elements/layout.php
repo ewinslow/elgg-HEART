@@ -15,23 +15,11 @@
 	PAGE LAYOUT
 *************************************** */
 /***** DEFAULT LAYOUT ******/
-.elgg-page-default > .elgg-page-header,
-.elgg-page-default > .elgg-page-body,
-.elgg-page-default > .elgg-page-footer {
-	background: url(<?php echo elgg_get_site_url(); ?>mod/HEART/graphics/bg_body.jpg);
-	width: 845px;
+.elgg-page-default {
 	margin: 0 auto;
-	position: relative;
-}
-
-.elgg-page-default > .elgg-page-header {
-	margin-top: 20px;
-	padding: 10px 10px 0;
-}
-
-.elgg-page-default > .elgg-page-body,
-.elgg-page-default > .elgg-page-footer {
-	padding: 0 10px;
+	width: 960px;
+	box-shadow: 0 0 20px 10px rgba(0,0,0,.5);
+	background: #f5e7b6;
 }
 
 .elgg-inner {position:relative}
@@ -67,6 +55,7 @@
 /***** PAGE HEADER ******/
 .elgg-page-header > .elgg-inner {
 	position: relative;
+	padding-bottom: 32px;
 }
 
 /***** PAGE BODY LAYOUT ******/
@@ -110,6 +99,9 @@
 /***** PAGE FOOTER ******/
 .elgg-page-footer {
 	position: relative;
+	font-size: 80%;
+	padding: 10px;
+	text-align:center;
 }
 .elgg-page-footer {
 	color: #999999;

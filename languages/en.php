@@ -203,7 +203,7 @@ or click below to view the group's join requests:
 	'groups:river:join' => 'joined the group',
 	'forumtopic:river:create' => 'added a new discussion topic',
 	'river:commented:object:groupforumtopic' => 'the discussion topic',
-	
+
 	'groups:nowidgets' => 'No widgets have been defined for this group.',
 
 
@@ -244,6 +244,7 @@ or click below to view the group's join requests:
 	'groups:ecml:discussion' => 'Group Discussions',
 	'groups:ecml:groupprofile' => 'Group profiles',
 
+	'thewire' => 'The Pulse',
 );
 
 add_translation("en", $english);

@@ -191,12 +191,12 @@
 	font-size: 130%;
 }
 
-.elgg-menu-site { background: #333; width:100%}
+.elgg-menu-site { background: #333; width:100%; position:absolute;}
 
 .elgg-menu-site > li > a {
 	font-weight: bold;
 	padding: 8px 13px 6px;
-	color: white;
+	color: #f5e7b6;
 	font-size: 1.3em;
 }
 
@@ -378,21 +378,24 @@
 	float: right;
 }
 
+.elgg-menu-footer-default {
+	float:left;
+}
+
 /* ***************************************
 	ENTITY METADATA
 *************************************** */
-.elgg-menu-metadata {
-	float: right;
-	margin-left: 15px;
-	font-size: 90%;
-	color: #aaa;
+.elgg-menu-entity {
+	font-size: 80%;
 }
-.elgg-menu-metadata > li {
+
+.elgg-menu-entity > li {
 	display: inline-block;
-	margin-left: 15px;
+	margin-right: 4px;
 }
-.elgg-menu-metadata > li > a {
-	color: #aaa;
+
+.elgg-timestamp {
+	color: gray;
 }
 
 /* ***************************************
