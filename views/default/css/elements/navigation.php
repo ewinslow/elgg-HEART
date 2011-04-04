@@ -191,22 +191,18 @@
 	font-size: 130%;
 }
 
-.elgg-menu-site { background: #333; }
+.elgg-menu-site { background: #333; width:100%}
 
 .elgg-menu-site > li > a {
 	font-weight: bold;
-	padding: 3px 13px 0px 13px;
-	height: 20px;
-	color: white
+	padding: 8px 13px 6px;
+	color: white;
+	font-size: 1.3em;
 }
 
 .elgg-menu-site > li > a:hover {
 	text-decoration: none;
-	color: darkOrange;
-}
-
-.elgg-menu-site-default {
-	display:inline-block;
+	background: #7d0b00;
 }
 
 .elgg-menu-site-default > li {

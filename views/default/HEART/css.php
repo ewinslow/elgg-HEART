@@ -28,15 +28,20 @@ body {
 
 img {max-width: 100%}
 
-.HEART-banner { position:relative}
+.HEART-banner {
+	position:relative;
+}
+
 .HEART-banner-text {
+	font-family: trebuchet;
+	font-style: italic;
+	color:white;
 	position:absolute;
-	top: 0;
+	bottom: 0;
 	left: 0;
 	padding: 20px;
 	font-size: 1.5em;
 	line-height: 1.3em;
-	font-weight:bold;
 }
 
 .elgg-button {display:inline-block}
@@ -56,4 +61,10 @@ a.elgg-button-large {
 
 .elgg-button-special:hover {
 	color:white;
+}
+
+.elgg-page-header .elgg-search {
+	position:absolute;
+	top: 10px;
+	right: 10px;
 }

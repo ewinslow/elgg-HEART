@@ -21,12 +21,17 @@
 	background: url(<?php echo elgg_get_site_url(); ?>mod/HEART/graphics/bg_body.jpg);
 	width: 845px;
 	margin: 0 auto;
-	padding: 10px;
 	position: relative;
 }
 
 .elgg-page-default > .elgg-page-header {
 	margin-top: 20px;
+	padding: 10px 10px 0;
+}
+
+.elgg-page-default > .elgg-page-body,
+.elgg-page-default > .elgg-page-footer {
+	padding: 0 10px;
 }
 
 .elgg-inner {position:relative}
