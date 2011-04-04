@@ -59,16 +59,19 @@ a.elgg-button-large {
 }
 
 .elgg-button-special {
-	background: green;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, darkGreen), color-stop(1, green));
-	border: 1px solid darkGreen;
+	background: #64aad0;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #086ca2), color-stop(1, #64aad0));
+	border: 1px solid #086ca2;
 	color: white;
-	text-shadow: 1px 1px 0px darkGreen;
+	text-shadow: 1px 1px 0px #086ca2;
 }
 
 .elgg-button-special:hover {
 	color:white;
-	background:green;
+}
+
+.elgg-button-special:active {
+	background: #086ca2;
 }
 
 .elgg-page-header .elgg-search {
