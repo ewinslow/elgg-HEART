@@ -1,12 +1,25 @@
 <?php
 /**
  * Elgg custom index layout
- * 
- * You can edit the layout of this page with your own layout and style. 
+ *
+ * You can edit the layout of this page with your own layout and style.
  * Whatever you put in this view will appear on the front page of your site.
- * 
+ *
  */
 ?>
+<div class="HEART-banner">
+	<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/graphics/photos/TaitaStudent-banner.JPG"/>
+	<div class="HEART-banner-text">
+		<p>Empowering the people of<br/>Africa to survive the<br/>HIV/AIDS pandemic.</p>
+		<p><?php
+			echo elgg_view('output/url', array(
+				'href' => '/donate',
+				'text' => 'Donate',
+				'class' => 'elgg-button elgg-button-special elgg-button-large',
+			));
+		?></p>
+	</div>
+</div>
 
 <div class="custom-index elgg-main elgg-grid clearfix">
 	<div class="elgg-col elgg-col-1of2">
@@ -56,7 +69,7 @@ if (elgg_is_active_plugin('thewire')) {
 		'view_type_toggle' => FALSE,
 		'full_view' => FALSE,
 	));
-	
+
 	echo elgg_view_module('info', elgg_echo('thewire'), $body);
 }
 
