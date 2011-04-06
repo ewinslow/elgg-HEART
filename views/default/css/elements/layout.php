@@ -56,6 +56,7 @@
 .elgg-page-header > .elgg-inner {
 	position: relative;
 	padding-bottom: 32px;
+	height:125px;
 }
 
 /***** PAGE BODY LAYOUT ******/

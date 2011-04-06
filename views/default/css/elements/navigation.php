@@ -186,16 +186,15 @@
 /* ***************************************
 	SITE MENU
 *************************************** */
-.elgg-menu-site-default {
-	font-family: "Colonna MT Regular", serif;
-	font-size: 130%;
+.elgg-menu-site {
+	background: #333;
+	width:100%;
+	position:absolute;
 }
-
-.elgg-menu-site { background: #333; width:100%; position:absolute;}
 
 .elgg-menu-site > li > a {
 	font-weight: bold;
-	padding: 8px 13px 6px;
+	padding: 8px 13px 7px;
 	color: #f5e7b6;
 	font-size: 1.3em;
 }
@@ -205,21 +204,32 @@
 	background: #7d0b00;
 }
 
-.elgg-menu-site-default > li {
-	display: inline-block;
-	margin-right: 1px;
+.elgg-menu-site-default {
+	font-family: "Colonna MT Regular", serif;
+	font-size: 130%;
+	background: -webkit-gradient(linear, left bottom, left top, from(#333), to(#555));
 }
 
-.elgg-more > a {position:relative; z-index: 3}
+.elgg-menu-site-default > li {
+	margin-right: 1px;
+	display:inline-block;
+	position:relative;
+}
+
+.elgg-menu-site-default > li > a:hover {
+	background: -webkit-gradient(linear, left bottom, left top, from(#7D0B00), to(#9F1C00));
+}
+
+.elgg-more {position:relative;}
+.elgg-more > a {z-index: 3}
 .elgg-more > ul {z-index: 2}
 
 .elgg-menu-site-more {
 	/* This can probably be abstracted to elgg-menu-dropdown */
-	display:none;
+	display: none;
 	position:absolute;
-	left: -1px;
+	left: 0;
 	top: 100%;
-	margin-top: -1px;
 	min-width: 150px;
 }
 
@@ -229,8 +239,9 @@
 
 .elgg-more > a:before {
 	content: "\25BC";
-	font-size: 70%;
+	font-size: small;
 	margin-right: 4px;
+	line-height: 13px;
 }
 
 /* ***************************************

@@ -8,7 +8,7 @@
  */
 ?>
 <div class="HEART-banner">
-	<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/graphics/photos/TaitaStudent-banner.JPG"/>
+	<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/graphics/photos/TaitaStudent-banner.JPG" height="362" width="100%" />
 	<div class="HEART-banner-text">
 		<p>Empowering the people of<br/>Africa to survive the<br/>HIV/AIDS pandemic.</p>
 		<p><?php
@@ -30,8 +30,12 @@
 
 			echo elgg_view('output/longtext', array('value' => $intro));
 
+			$groups = elgg_get_entities_from_metadata(array('metadata_name' => 'featured_group', 'metadata_value' => 'yes', 'types' => 'group'));
+
+			$groups_html = elgg_view('page/components/gallery', array('items' => $groups, 'pagination' => FALSE));
+
+			echo elgg_view_module('info', elgg_echo('groups'), $groups_html);
 		?>
-		<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/graphics/Heart-Wheel-on-Gold.jpg" />
 	</div>
 	<div class="elgg-col elgg-col-1of3">
 	<?php

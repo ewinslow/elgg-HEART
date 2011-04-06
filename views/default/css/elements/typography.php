@@ -64,6 +64,7 @@ h1.elgg-heading-site {
 
 .elgg-heading-main {
 	background: #333;
+	background: -webkit-gradient(linear, left bottom, left top, from(#333), to(#555));
 	text-align:center;
 	padding: 8px 13px 6px;
 	color: #f5e7b6;

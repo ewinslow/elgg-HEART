@@ -3,17 +3,21 @@
 function heart_init() {
 	elgg_extend_view('css/elgg', 'HEART/css');
 	elgg_extend_view('page/elements/footer', 'HEART/footer');
+	elgg_extend_view('page/elements/head', 'HEART/metatags', 1);
 
-	elgg_register_menu_item('footer', array(
-		'name' => 'login',
-		'text' => 'Member Sign in',
-		'href' => '/login',
-		'section' => 'alt',
-	));
+	if (!elgg_is_logged_in()) {
+		elgg_register_menu_item('footer', array(
+			'name' => 'login',
+			'text' => 'Member Sign in',
+			'href' => '/login',
+			'section' => 'alt',
+		));
+	}
 
 	elgg_register_menu_item('footer', array(
 		'name' => 'design_by',
 		'text' => 'Design by Evan and Katelyn Winslow',
+		'href' => FALSE,
 	));
 
 	elgg_register_menu_item('footer', array(

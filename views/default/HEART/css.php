@@ -106,3 +106,16 @@ a:hover{color: #E65217;}
 }
 
 .elgg-list {margin:0}
+
+.elgg-gallery > li {
+	display: inline-block;
+	vertical-align: top;
+
+	/* IE fixes */
+	zoom: 1;
+	*display: inline;
+}
+
+.elgg-gallery-2 > li {
+	width:50%;
+}
