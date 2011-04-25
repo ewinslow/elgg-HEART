@@ -33,7 +33,7 @@ img {max-width: 100%}
 
 .HEART-banner {
 	position:relative;
-	margin-bottom:-3px;
+	margin-bottom:-4px;
 }
 
 .HEART-banner-text {

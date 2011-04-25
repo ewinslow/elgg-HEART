@@ -17,7 +17,7 @@
 
 body {
 	font-size: 14px;
-	line-height: 123%;
+	line-height: normal;
 	font-family: "trebuchet ms", "Times New Roman", serif;
 }
 pre, code {
@@ -69,7 +69,6 @@ h1.elgg-heading-site {
 	padding: 8px 13px 6px;
 	color: #f5e7b6;
 	font-size:24px;
-	line-height: 17px;
 }
 .elgg-heading-basic {
 	color: #0054A7;
@@ -80,7 +79,6 @@ h1.elgg-heading-site {
 .elgg-subtext {
 	color: #666666;
 	font-size: 85%;
-	line-height: 1.2em;
 	font-style: italic;
 }
 

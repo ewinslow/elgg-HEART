@@ -68,12 +68,16 @@
 	padding: 10px 0;
 }
 
+.elgg-layout-one-sidebar {
+	padding-left: 20px;	
+}
+
 .elgg-sidebar {
 	position: relative;
-	padding: 20px 10px;
+	padding: 20px 0;
 	float: right;
 	width: 210px;
-	margin: 0 0 0 10px;
+	margin-left: 20px;
 }
 .elgg-sidebar-alt {
 	position: relative;

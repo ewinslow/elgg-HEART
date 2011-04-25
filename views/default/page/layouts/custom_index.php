@@ -30,11 +30,9 @@
 
 			echo elgg_view('output/longtext', array('value' => $intro));
 
-			$groups = elgg_get_entities_from_metadata(array('metadata_name' => 'featured_group', 'metadata_value' => 'yes', 'types' => 'group'));
+			$groups = elgg_list_entities_from_metadata(array('metadata_name' => 'featured_group', 'metadata_value' => 'yes', 'types' => 'group'));
 
-			$groups_html = elgg_view('page/components/gallery', array('items' => $groups, 'pagination' => FALSE));
-
-			echo elgg_view_module('info', elgg_echo('groups'), $groups_html);
+			echo elgg_view_module('info', elgg_echo('groups'), $groups);
 		?>
 	</div>
 	<div class="elgg-col elgg-col-1of3">
