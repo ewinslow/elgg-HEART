@@ -14,6 +14,10 @@ body {
 	background-image: url(<?php echo elgg_get_site_url(); ?>mod/HEART/graphics/bg_main.jpg);
 }
 
+.elgg-icon {
+	vertical-align: middle;
+}
+
 .elgg-image-block {
 	padding: 0;
 	margin: 0;
@@ -34,7 +38,13 @@ img {max-width: 100%}
 .HEART-banner {
 	position:relative;
 	margin-bottom:-4px;
+	overflow:hidden;
 }
+
+.HEART-banner img {
+	width: 100%;
+}
+
 
 .HEART-banner-text {
 	font-family: trebuchet;
@@ -47,31 +57,11 @@ img {max-width: 100%}
 	font-size: 1.5em;
 	line-height: 1.3em;
 	text-shadow: 1px 1px 10px black;
+	width: 225px;
 }
 
-.elgg-button {display:inline-block}
-.elgg-button:hover {text-decoration:none}
-
-.elgg-button-large,
-a.elgg-button-large {
-	font-size: 1.5em;
-	padding: .3em .6em;
-}
-
-.elgg-button-special {
-	background: #64aad0;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #086ca2), color-stop(1, #64aad0));
-	border: 1px solid #086ca2;
-	color: white;
-	text-shadow: 1px 1px 0px #086ca2;
-}
-
-.elgg-button-special:hover {
-	color:white;
-}
-
-.elgg-button-special:active {
-	background: #086ca2;
+.HEART-banner-groups img {
+	margin: -25% 0 -10%;
 }
 
 .elgg-page-header .elgg-search {
@@ -90,22 +80,8 @@ a.elgg-button-large {
 	padding: 5px;
 }
 
-.elgg-author-name {
-	font-weight:bold;
-}
-
-a {color:#7d0b00;}
-a:hover{color: #E65217;}
-
-.elgg-output a {
-	text-decoration:underline;
-}
-
-.elgg-output a:hover {
-	text-decoration:underline;
-}
-
-.elgg-list {margin:0}
+.elgg-list {margin:0; border:0}
+.elgg-list > li {border:0}
 
 .elgg-gallery > li {
 	display: inline-block;
@@ -118,4 +94,17 @@ a:hover{color: #E65217;}
 
 .elgg-gallery-2 > li {
 	width:50%;
+}
+
+.elgg-river > li {
+	padding: 7px 0;
+}
+
+.HEART-heading-motto {
+	background: #444;
+	background: -webkit-gradient(linear, left bottom, left top, from(#333), to(#555));
+	font-size:24px;
+	padding: 8px 0 6px;
+	color: #F5E7B6;
+	text-align:center;
 }

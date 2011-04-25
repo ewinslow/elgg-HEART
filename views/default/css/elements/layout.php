@@ -53,6 +53,9 @@
 }
 
 /***** PAGE HEADER ******/
+.elgg-page-header {
+	background: #444;
+}
 .elgg-page-header > .elgg-inner {
 	position: relative;
 	padding-bottom: 32px;
@@ -60,6 +63,11 @@
 }
 
 /***** PAGE BODY LAYOUT ******/
+.elgg-page-body {
+	position:relative;
+	background: #F5E7B6;
+	z-index: 100;
+}
 .elgg-layout {
 	min-height: 360px;
 }
@@ -69,7 +77,7 @@
 }
 
 .elgg-layout-one-sidebar {
-	padding-left: 20px;	
+	padding: 10px 0 0 20px;	
 }
 
 .elgg-sidebar {
@@ -92,8 +100,6 @@
 	padding: 10px;
 }
 .elgg-main > .elgg-head {
-	padding-bottom: 3px;
-	border-bottom: 1px solid #CCCCCC;
 	margin-bottom: 10px;
 }
 

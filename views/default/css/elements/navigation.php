@@ -140,6 +140,7 @@
 	background: #333;
 	width:100%;
 	position:absolute;
+	z-index: 101;
 }
 
 .elgg-menu-site > li > a {
@@ -384,10 +385,16 @@
 *************************************** */
 .elgg-menu-river {
 	font-size: 90%;
+	float:right;
+}
+
+.elgg-menu-river > li {
+	display: inline-block;
 }
 
 .elgg-menu-extras {
 	padding-left: 10px;
+	padding-bottom: 10px;
 }
 
 .elgg-menu-extras > li {

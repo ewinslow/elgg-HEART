@@ -54,6 +54,8 @@ a:hover {text-decoration:none !important}
 	line-height: 1.2em;
 	font-family: "Colonna MT Regular", Georgia, times, serif;
 	text-shadow: 1px 2px 4px #333333;
+	text-align: center;
+	padding: 30px 20px;
 }
 
 h1.elgg-heading-site {
@@ -63,11 +65,8 @@ h1.elgg-heading-site {
 .elgg-heading-site:hover {	text-decoration: none}
 
 .elgg-heading-main {
-	background: #333;
-	background: -webkit-gradient(linear, left bottom, left top, from(#333), to(#555));
 	text-align:center;
-	padding: 8px 13px 6px;
-	color: #f5e7b6;
+	padding: 8px 0 6px;
 	font-size:24px;
 }
 .elgg-heading-basic {
@@ -77,11 +76,26 @@ h1.elgg-heading-site {
 }
 
 .elgg-subtext {
-	color: #666666;
+	color: #666;
 	font-size: 85%;
 	font-style: italic;
 }
 
-.elgg-output {
-	margin: 10px;
+.elgg-author-name {
+	font-weight:bold;
+}
+
+a {color:#7d0b00}
+a:hover{color: #E65217}
+
+.elgg-output p {
+	margin-bottom: 1em;
+}
+
+.elgg-output a {
+	text-decoration:underline;
+}
+
+.elgg-output a:hover {
+	text-decoration:underline;
 }
