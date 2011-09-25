@@ -16,9 +16,11 @@
 	text-align:center;
 	font-size: 1.5em;
 }
+
 .elgg-module-info > .elgg-head > h3 {
 	color: #333;
 }
+
 /* Popup */
 .elgg-module-popup {
 	background-color: white;

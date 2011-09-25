@@ -15,6 +15,10 @@
 		<name>custom_index</name>
 	</requires>
 	<requires>
+		<type>plugin</type>
+		<name>thewire</name>
+	</requires>
+	<requires>
 		<type>priority</type>
 		<plugin>custom_index</plugin>
 		<priority>after</priority>

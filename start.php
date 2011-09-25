@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('America/Los_Angeles');
+
 function heart_init() {
 	elgg_extend_view('css/elgg', 'HEART/css');
 	elgg_extend_view('page/elements/footer', 'HEART/footer');

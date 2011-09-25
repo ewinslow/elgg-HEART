@@ -12,7 +12,7 @@
 *************************************** */
 @font-face {
 	font-family: "Colonna MT Regular";
-	src: url("<?php echo elgg_get_site_url(); ?>mod/HEART/fonts/Colonna_MT_Regular.ttf");
+	src: url("<?php echo elgg_get_site_url(); ?>mod/HEART/assets/fonts/Colonna_MT_Regular.ttf");
 }
 
 body {

@@ -11,7 +11,7 @@
  *   #FFEBBF -- Light yellowish
  */
 body {
-	background-image: url(<?php echo elgg_get_site_url(); ?>mod/HEART/graphics/bg_main.jpg);
+	background-image: url(<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/bg_main.jpg);
 }
 
 .elgg-icon {
