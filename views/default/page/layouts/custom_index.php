@@ -13,7 +13,7 @@
 		<p>Empowering the people of Africa to survive the HIV/AIDS pandemic.</p>
 		<p><?php
 			echo elgg_view('output/url', array(
-				'href' => '/donate',
+				'href' => 'http://africaheart.com/programsupport.html',
 				'text' => 'Donate',
 				'class' => 'elgg-button elgg-button-special elgg-button-large',
 				'title' => 'Click me!',

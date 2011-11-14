@@ -7,8 +7,8 @@
 	<website>http://www.africaheart.com/</website>
 	<copyright>(C) 2011 Evan Winslow</copyright>
 	<requires>
-		<type>elgg_version</type>
-		<version>2011010401</version>
+		<type>elgg_release</type>
+		<version>1.8.0</version>
 	</requires>
 	<requires>
 		<type>plugin</type>
