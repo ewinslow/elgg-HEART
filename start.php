@@ -177,8 +177,8 @@ function heart_init() {
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'join',
 		'name' => 'shortterm',
-		'text' => '1 Short-term mission',
-		'href' => 'http://africaheart.com/getInvolved.html',
+		'text' => '1 Short-term Mission',
+		'href' => 'http://africaheart.com/forms.html',
 	));
 	
 	// summer internship
@@ -186,7 +186,7 @@ function heart_init() {
 		'parent_name' => 'join',
 		'name' => 'internship',
 		'text' => '2 Summer Internship',
-		'href' => 'http://africaheart.com/getInvolved.html',
+		'href' => 'http://africaheart.com/forms.html',
 	));
 	
 	// staff position
@@ -194,7 +194,7 @@ function heart_init() {
 		'parent_name' => 'join',
 		'name' => 'internship',
 		'text' => '3 Staff Positions',
-		'href' => 'http://africaheart.com/getInvolved.html',
+		'href' => 'http://africaheart.com/forms.html',
 	));
 	
 	// financial support
