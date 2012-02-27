@@ -1,12 +1,58 @@
 <?php
-
 date_default_timezone_set('America/Los_Angeles');
 
-function heart_init() {
-	elgg_extend_view('css/elgg', 'HEART/css');
-	elgg_extend_view('page/elements/footer', 'HEART/footer');
-	elgg_extend_view('page/elements/head', 'HEART/metatags', 1);
+function HEART_init() {
+	elgg_unregister_page_handler('activity');
+	
+	// Don't really want the standard site menu items...
+	elgg_unregister_menu_item('site', 'activity');
+	elgg_unregister_menu_item('site', 'thewire');
+	elgg_unregister_menu_item('site', 'photos');
+	elgg_unregister_menu_item('site', 'blog');
+	
+	// Don't really want the standard footer menu items...
+	elgg_unregister_menu_item('footer', 'report_this');
+	elgg_unregister_menu_item('footer', 'about');
+	elgg_unregister_menu_item('footer', 'terms');
+	elgg_unregister_menu_item('footer', 'privacy');
+	
+	// Remove menu-item admin configuration option
+	elgg_unregister_menu_item('page', 'appearance:menu_items');
+	elgg_unregister_menu_item('page', 'appearance:profile_fields');
+	elgg_unregister_menu_item('page', 'appearance:default_widgets');
+	
+	// Remove friend-related pages
+	elgg_unregister_page_handler('friends', 'friends_page_handler');
+	elgg_unregister_page_handler('friendsof', 'friends_of_page_handler');
+	elgg_unregister_page_handler('collections', 'collections_page_handler');
+	
+	elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'HEART_unregister_friend_items');
+	elgg_register_plugin_hook_handler('register', 'menu:topbar', 'HEART_unregister_friend_items');
+	elgg_register_plugin_hook_handler('register', 'menu:entity', 'HEART_unregister_slideshow');
+	
+	// Remove comments and tags from search
+	elgg_unregister_plugin_hook_handler('search_types', 'get_types', 'search_custom_types_tags_hook');
+	elgg_unregister_plugin_hook_handler('search', 'tags', 'search_tags_hook');
+	
+	elgg_unregister_plugin_hook_handler('search_types', 'get_types', 'search_custom_types_comments_hook');
+	elgg_unregister_plugin_hook_handler('search', 'comments', 'search_comments_hook');
+	
+	elgg_register_entity_url_handler('user', 'all', 'HEART_user_url_handler');
 
+	elgg_register_action('entity/backdate', dirname(__FILE__) . '/actions/entity/backdate.php');
+	elgg_register_js('elgg.backdate', 'mod/HEART/js/entity/backdate.js', 'footer');
+	elgg_load_js('elgg.backdate');
+	
+	elgg_extend_view('css/elgg', 'HEART/css');
+	elgg_extend_view('page/elements/head', 'HEART/metatags', 1);
+	elgg_extend_view('page/elements/foot', 'facebook/jssdk');
+
+	elgg_register_simplecache_view('page/layouts/custom_index');
+	elgg_register_simplecache_view('page/elements/header');
+
+	elgg_register_viewtype_fallback('mobile');
+	elgg_register_viewtype_fallback('tablet');
+	
 	if (!elgg_is_logged_in()) {
 		elgg_register_menu_item('footer', array(
 			'name' => 'login',
@@ -29,108 +75,98 @@ function heart_init() {
 	));
 
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'HEART_entity_menu');
-
-	elgg_unregister_menu_item('footer', 'report_this');
-	elgg_unregister_menu_item('footer', 'about');
-	elgg_unregister_menu_item('footer', 'terms');
-	elgg_unregister_menu_item('footer', 'privacy');
-	
-	elgg_unregister_menu_item('site', 'activity');
-	elgg_unregister_menu_item('site', 'thewire');
-	
 	
 	elgg_register_menu_item('site', array(
 		'name' => 'home',
-		'text' => '1 Home',
+		'text' => 'Home',
 		'href' => '/',
+		'priority' => 10,
 	));
 	
 	// ABOUT Menu
 	elgg_register_menu_item('site', array(
 		'name' => 'about',
-		'text' => "2 About",
+		'text' => "About",
 		'href' => 'http://africaheart.com/about.html',
+		'priority' => 20,
 	));
 
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'about',
 		'name' => 'vision',
-		'text' => '1 Our Vision',
+		'text' => 'Our Vision',
 		'href' => 'http://africaheart.com/about.html',
+		'priority' => 21,
 	));
 	
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'about',
 		'name' => 'team',
-		'text' => '2 Our Team',
+		'text' => 'Our Team',
 		'href' => 'http://africaheart.com/leaderStaff.html',
+		'priority' => 22,
 	));
 	
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'about',
 		'name' => 'partners',
-		'text' => '3 Our Partners',
-		'href' => 'http://www.liftupafrica.org/project_africa_heart_greenhouse_project.php'
+		'text' => 'Our Partners',
+		'href' => 'http://www.liftupafrica.org/project_africa_heart_greenhouse_project.php',
+		'priority' => 23,
 	));
 	
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'about',
 		'name' => 'contactus',
-		'text' => '4 Contact Us',
+		'text' => 'Contact Us',
 		'href' => 'http://africaheart.com/contactUs.html',
+		'priority' => 24,
 	));
 	
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'about',
 		'name' => 'kenya',
-		'text' => '5 About Kenya',
+		'text' => 'About Kenya',
 		'href' => 'http://africaheart.com/aboutKenya.html',
+		'priority' => 25,
 	));
 	
 	// PROJECTS
 	elgg_register_menu_item('site', array(
 		'name' => 'projects',
-		'text' => '3 Projects',
+		'text' => 'Projects',
 		'href' => 'http://africaheart.com/ourWork.html',
+		'priority' => 30,
 	));
 	
-	// Kids for School
-	elgg_register_menu_item('site', array(
-		'parent_name' => 'projects',
-		'name' => 'kfs',
-		'text' => '1 Kids for School',
-		'href' => 'http://africaheart.com/ourWork/schoolProject.html',
-	));
-	
-	// WEEP
-	elgg_register_menu_item('site', array(
-		'parent_name' => 'projects',
-		'name' => 'weep',
-		'text' => '2 WEEP',
-		'href' => 'http://africaheart.com/WEEP.html'
-	));
-	
-	// Freedom for Girls
-	elgg_register_menu_item('site', array(
-		'parent_name' => 'projects',
-		'name' => 'ffg',
-		'text' => '3 Freedom for Girls',
-		'href' => 'http://africaheart.com/freedom.html',
-	));
-	
-	// More...
-	elgg_register_menu_item('site', array(
-		'parent_name' => 'projects',
-		'name' => 'moreprojects',
-		'text' => '4 More...',
-		'href' => 'http://africaheart.com/ourWork.html'
-	));
+	$projects = array(
+		'kfs' => 'Kids for School',
+		'weep' => "WEEP",
+		'ffg' => 'Freedom for Girls',
+		'props' => 'PROPS',
+		'yep' => 'Youth Empowerment',
+		'cm' => "Children's Ministry",
+		'msni' => "Medical, Surgical, Nutritional",
+	);
+
+	$i = 31;
+	foreach ($projects as $key => $project) {
+		$i++;
+		elgg_register_menu_item('site', array(
+			'parent_name' => 'projects',
+			'name' => $key,
+			'text' => $project,
+			'href' => "/$key",
+			'priority' => $i,
+		));
+	}
 	
 	// NEWS
 	elgg_register_menu_item('site', array(
 		'name' => 'news',
-		'text' => '4 News',
+		'text' => 'News',
 		'href' => 'http://africaheart.com/reports.html',
+		'priority' => 40,
 	));
 	
 	
@@ -138,79 +174,204 @@ function heart_init() {
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'news',
 		'name' => 'blogs',
-		'text' => '1 Blogs',
-		'href' => 'http://africaheartnews.blogspot.com/',
+		'text' => 'Blogs',
+		'href' => '/blog/all',
+		'priority' => 41,
 	));
 	
-	// from the field
+	// photos
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'news',
-		'name' => 'fromthefield',
-		'text' => '2 From the Field',
-		'href' => '/thewire'
+		'name' => 'photos',
+		'text' => elgg_echo('photos'),
+		'href' => '/photos/all',
+		'priority' => 42,
+	));
+	
+	elgg_register_menu_item('site', array(
+		'parent_name' => 'news',
+		'name' => 'videos',
+		'text' => 'Videos',
+		'href' => 'http://africaheart.com/videos.html',
+		'priority' => 43,
 	));
 		
 	// pulse newsletters
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'news',
 		'name' => 'pulse',
-		'text' => '3 Pulse Newsletters',
+		'text' => 'Pulse Newsletters',
 		'href' => 'http://africaheart.com/reports.html',
-	));
-	
-	// archives
-	elgg_register_menu_item('site', array(
-		'parent_name' => 'news',
-		'name' => 'archives',
-		'text' => '4 Archives',
-		'href' => 'http://africaheart.typepad.com/africa_heart_updates/archives.html',
+		'priority' => 44,
 	));
 	
 	// JOIN
 	elgg_register_menu_item('site', array(
 		'name' => 'join',
-		'text' => '5 Join',
+		'text' => 'Join',
 		'href' => 'http://africaheart.com/getInvolved.html',
+		'priority' => 50,
 	));
 	
 	// short-term mission
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'join',
 		'name' => 'shortterm',
-		'text' => '1 Short-term Mission',
+		'text' => 'Short-term Mission',
 		'href' => 'http://africaheart.com/forms.html',
+		'priority' => 51,
 	));
 	
 	// summer internship
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'join',
 		'name' => 'internship',
-		'text' => '2 Summer Internship',
+		'text' => 'Summer Internship',
 		'href' => 'http://africaheart.com/forms.html',
+		'priority' => 52,
 	));
 	
 	// staff position
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'join',
 		'name' => 'internship',
-		'text' => '3 Staff Positions',
+		'text' => 'Staff Positions',
 		'href' => 'http://africaheart.com/forms.html',
+		'priority' => 53,
 	));
 	
 	// financial support
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'join',
 		'name' => 'financial',
-		'text' => '4 Financial Support',
+		'text' => 'Financial Support',
 		'href' => 'http://africaheart.com/programsupport.html',
+		'priority' => 54,
 	));
 	
 	// DONATE
 	elgg_register_menu_item('site', array(
 		'name' => 'donate',
-		'text' => '6 Donate',
+		'text' => 'Donate',
 		'href' => 'http://africaheart.com/programsupport.html',
+		'priority' => 60,
 	));
+	
+	elgg_register_menu_item('site', array(
+		'parent_name' => 'donate',
+		'name' => 'donate-online',
+		'text' => 'Online',
+		'href' => 'http://africaheart.com/donate_online.html',
+		'priority' => 61,
+	));
+	
+	elgg_register_menu_item('site', array(
+		'parent_name' => 'donate',
+		'name' => 'donate-phone',
+		'text' => 'By phone',
+		'href' => 'http://africaheart.com/donate[phone].html',
+		'priority' => 62,
+	));
+	
+	elgg_register_menu_item('site', array(
+		'parent_name' => 'donate',
+		'name' => 'donate-mail',
+		'text' => 'By mail',
+		'href' => 'http://africaheart.com/donate[mail].html',
+		'priority' => 63,
+	));
+	
+	
+	elgg_register_page_handler('profile', 'HEART_profile_page_handler');
+	
+	if (elgg_is_logged_in()) {
+		elgg_register_menu_item('topbar', array(
+			'name' => 'blog',
+			'text' => '+ New blog',
+			'href' => '/blog/add/' . elgg_get_logged_in_user_guid(),
+			'priority' => 1000,
+		));
+		
+		elgg_register_menu_item('topbar', array(
+			'name' => 'photos',
+			'text' => '+ New album',
+			'href' => '/photos/add/' . elgg_get_logged_in_user_guid(),
+			'priority' => 1001,
+		));
+	}
+	
+	elgg_register_plugin_hook_handler('access:collections:write', 'user', 'HEART_get_privacy_levels');
+	
+	elgg_register_plugin_hook_handler('view', 'output/longtext', 'mentions_rewrite');
+	
+	elgg_register_plugin_hook_handler('route', 'all', 'HEART_user_url_router');
+	
+	elgg_register_plugin_hook_handler('register', 'menu:entity', 'HEART_backdate_menu_item');
+}
+
+function HEART_unregister_friend_items($hook, $type, $items, $params) {
+	$result = array();
+	foreach ($items as $item) {
+		switch ($item->getName()) {
+			case 'friends':
+			case 'add_friend':
+			case 'remove_friend':
+				break;
+			default:
+				$result[] = $item;
+				break;
+		}
+	}
+	
+	return $result;
+}
+
+function HEART_backdate_menu_item($hook, $type, $items, $params) {
+	$entity = $params['entity'];
+
+	if ($entity->canEdit() && in_array($entity->getSubtype(), array('blog', 'album'))) {
+		$items[] = ElggMenuItem::factory(array(
+			'name' => 'backdate',
+			'text' => 'Change Date',
+			'href' => "#$entity->guid",
+		));
+		
+		return $items;
+	}
+}
+
+function HEART_unregister_slideshow($hook, $type, $items, $params) {
+	$result = array();
+	foreach ($items as $item) {
+		switch ($item->getName()) {
+			case 'slideshow':
+				break;
+			default:
+				$result[] = $item;
+				break;
+		}
+	}
+	
+	return $result;
+}
+
+function HEART_user_url_handler($user) {
+	return elgg_normalize_url("/$user->username");
+}
+
+function HEART_user_url_router($handler, $username, $params, $return) {
+	$user = get_user_by_username($username);
+
+	if ($user && empty($params['segments'])) {
+		return HEART_profile_page_handler(array($username));
+	}
+}
+
+function HEART_get_privacy_levels() {
+	return array(
+		ACCESS_LOGGED_IN => elgg_echo("LOGGED_IN"),
+		ACCESS_PUBLIC => elgg_echo("PUBLIC"),
+	);
 }
 
 function HEART_entity_menu($hook, $type, $items, $params) {
@@ -231,4 +392,58 @@ function HEART_entity_menu($hook, $type, $items, $params) {
 	return $items;
 }
 
-elgg_register_event_handler('init', 'system', 'heart_init');
+/**
+* Profile page handler
+*
+* @param array $page Array of URL segments passed by the page handling mechanism
+* @return bool
+*/
+function HEART_profile_page_handler($page) {
+
+	if (isset($page[0])) {
+		$username = $page[0];
+		$user = get_user_by_username($username);
+		elgg_set_page_owner_guid($user->guid);
+	}
+
+	// short circuit if invalid or banned username
+	if (!$user || ($user->isBanned() && !elgg_is_admin_logged_in())) {
+		register_error(elgg_echo('profile:notfound'));
+		forward();
+	}
+
+	$action = NULL;
+	if (isset($page[1])) {
+		$action = $page[1];
+	}
+
+	if ($action == 'edit') {
+		// use the core profile edit page
+		$base_dir = elgg_get_root_path();
+		require "{$base_dir}pages/profile/edit.php";
+		return;
+	}
+
+	// main profile page
+	$body = elgg_view_layout('one_column', array('content' => elgg_view('profile/wrapper')));
+	echo elgg_view_page($user->name, $body);
+	return true;
+}
+
+function mentions_rewrite_callback($matches) {
+	if ($user = get_user_by_username($matches[1])) {
+		return elgg_view('output/url', array(
+			'text' => $user->name,
+			'href' => $user->getUrl(),
+			'is_trusted' => true,
+		));
+	} else {
+		return $matches[0];
+	}
+}
+
+function mentions_rewrite($hook, $entity_type, $returnvalue, $params) {
+	return preg_replace_callback('/[\b]?@([\p{L}\p{M}_\.0-9]+)[\b]?/iu', 'mentions_rewrite_callback', $returnvalue);
+}
+
+elgg_register_event_handler('init', 'system', 'HEART_init');

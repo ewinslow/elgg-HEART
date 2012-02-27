@@ -1,3 +1,8 @@
+/*<style>
+/**
+ *
+ */
+
 .elgg-button {display:inline-block; padding: .3em .6em}
 .elgg-button:hover {text-decoration:none}
 
@@ -17,9 +22,12 @@ a.elgg-button-large {
 }
 
 .elgg-button-special:hover {
-	color:white;
+	color: white;
+	box-shadow: 1px 1px 5px #333;
 }
 
 .elgg-button-special:active {
 	background: #086ca2;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1, #64aad0), color-stop(0, #086ca2));
+	box-shadow: none;
 }

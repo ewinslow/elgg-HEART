@@ -10,7 +10,7 @@
  * @subpackage UI
  */
 ?>
-
+/* <style> */
 /* ***************************************
 	PAGE LAYOUT
 *************************************** */
@@ -26,15 +26,19 @@
 
 /***** TOPBAR ******/
 .elgg-page-topbar {
-	background: #333333 url(<?php echo elgg_get_site_url(); ?>_graphics/toptoolbar_background.gif) repeat-x top left;
-	border-bottom: 1px solid #000000;
-	min-width: 998px;
-	position: relative;
+	background: #333 url(<?php echo elgg_get_site_url(); ?>_graphics/toptoolbar_background.gif) repeat-x top left;
+	border-bottom: 1px solid #000;
 	height: 24px;
+	left: 0;
+	min-width: 998px;
+	padding: 0 10px;
+	position: fixed;
+	right: 0;
 	z-index: 9000;
 }
-.elgg-page-topbar > .elgg-inner {
-	padding: 0 10px;
+
+.elgg-page-topbar + .elgg-page {
+	padding-top: 25px;
 }
 
 /***** PAGE MESSAGES ******/
@@ -70,10 +74,7 @@
 }
 .elgg-layout {
 	min-height: 360px;
-}
-
-.elgg-layout-one-column {
-	padding: 10px 0;
+	padding: 20px;
 }
 
 .elgg-layout-one-sidebar {
@@ -112,7 +113,6 @@
 	position: relative;
 	font-size: 80%;
 	padding: 10px;
-	text-align:center;
 }
 .elgg-page-footer {
 	color: #999999;

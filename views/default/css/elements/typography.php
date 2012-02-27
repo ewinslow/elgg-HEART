@@ -6,7 +6,7 @@
  * @subpackage UI
  */
 ?>
-
+/*<style>*/
 /* ***************************************
 	Typography
 *************************************** */
@@ -16,10 +16,15 @@
 }
 
 body {
-	font-size: 14px;
 	line-height: normal;
-	font-family: "trebuchet ms", "Times New Roman", serif;
+	font-family: "Trebuchet MS", "Times New Roman", serif;
+	font-size: 14px;
 }
+
+p {
+	margin-bottom: 1em;
+}
+
 pre, code {
 	font-family: Monaco, "Courier New", Courier, monospace;
 	font-size: 12px;
@@ -29,14 +34,17 @@ input, textarea {
 }
 blockquote {
 	line-height: 1.3em;
+	margin-left: 40px;
+	margin-right: 40px;
 }
 h1, h2, h3, h4, h5, h6 {
+	color: #7D0B00;
 	font-weight: bold;
-	font-family: "Colonna MT Regular";
-	color: inherit;
+	font-family: "Trebuchet MS", "Times New Roman", serif;	
+	margin-bottom: 0.5em;
 }
-h1 { font-size: 1.8em; }
-h2 { font-size: 1.5em; line-height: 1.1em; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.8em; }
 h3 { font-size: 1.2em; }
 h4 { font-size: 1.0em; }
 h5 { font-size: 0.9em; }
@@ -74,11 +82,20 @@ h1.elgg-heading-site {
 	font-size: 1.2em;
 	font-weight: bold;
 }
+.HEART-heading-motto {
+	background: #444;
+	background: -webkit-gradient(linear, left bottom, left top, from(#333), to(#555));
+	color: #F5E7B6;
+	font-size: 24px;
+	font-family: "Colonna MT Regular";
+	margin: 0;
+	padding: 8px 0 6px;
+	text-align: center;
+}
 
 .elgg-subtext {
 	color: #666;
 	font-size: 85%;
-	font-style: italic;
 }
 
 .elgg-author-name {

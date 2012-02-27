@@ -6,9 +6,15 @@
 	<description>HEART website theme + customizations</description>
 	<website>http://www.africaheart.com/</website>
 	<copyright>(C) 2011 Evan Winslow</copyright>
+
 	<requires>
 		<type>elgg_release</type>
 		<version>1.8.0</version>
+	</requires>
+
+	<requires>
+		<type>plugin</type>
+		<name>blog_tools</name>
 	</requires>
 	<requires>
 		<type>plugin</type>
@@ -16,12 +22,43 @@
 	</requires>
 	<requires>
 		<type>plugin</type>
-		<name>thewire</name>
+		<name>google</name>
+	</requires>
+	<requires>
+		<type>plugin</type>
+		<name>profile</name>
+	</requires>
+	<requires>
+		<type>plugin</type>
+		<name>search</name>
+	</requires>
+	<requires>
+		<type>plugin</type>
+		<name>tidypics</name>
+	</requires>
+	<requires>
+		<type>plugin</type>
+		<name>tinymce</name>
+	</requires>
+	
+	<requires>
+		<type>priority</type>
+		<plugin>blog_tools</plugin>
+		<priority>after</priority>
 	</requires>
 	<requires>
 		<type>priority</type>
 		<plugin>custom_index</plugin>
 		<priority>after</priority>
 	</requires>
-	<admin_interface>basic</admin_interface>
+	<requires>
+		<type>priority</type>
+		<plugin>profile</plugin>
+		<priority>after</priority>
+	</requires>
+	<requires>
+		<type>priority</type>
+		<plugin>tidypics</plugin>
+		<priority>after</priority>
+	</requires>
 </plugin_manifest>

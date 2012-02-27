@@ -1,12 +1,26 @@
+/*<style>
+/**
+ *
+ */
+
 /* ***************************************
 	Modules
 *************************************** */
 /* Aside */
+.elgg-module-aside {
+	font-size: 85%;
+	margin-bottom: 20px;
+}
+
 .elgg-module-aside .elgg-head {
 	border-bottom: 1px solid #CCC;
 
 	margin-bottom: 5px;
 	padding-bottom: 5px;
+}
+
+.elgg-module-aside > .elgg-head > h3 {
+	margin: 0;
 }
 
 /* Info */

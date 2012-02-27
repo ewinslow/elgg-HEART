@@ -8,48 +8,43 @@
  */
 ?>
 <div class="HEART-banner">
-	<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/photos/TaitaStudent-banner.JPG" height="362" width="100%" />
+	<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/photos/TaitaStudent-banner.jpg" height="362" width="100%" />
 	<div class="HEART-banner-text">
-		<p>Empowering the people of Africa to survive the HIV/AIDS pandemic.</p>
-		<p><?php
+		<p><?php echo elgg_echo('HEART:vision'); ?></p>
+		<?php
 			echo elgg_view('output/url', array(
 				'href' => 'http://africaheart.com/programsupport.html',
-				'text' => 'Donate',
+				'text' => elgg_echo('donate'),
 				'class' => 'elgg-button elgg-button-special elgg-button-large',
 				'title' => 'Click me!',
 			));
-		?></p>
-	</div>
-</div>
-<h2 class="HEART-heading-motto">Knowledge = Power = Survival</h2>
-<div class="elgg-grid">
-	<div class="elgg-col elgg-col-2of3">
-		<?php
-			//Through the teaching of volunteer teams, community development and empowerment of local leaders, HEART provides pivotal HIV/AIDS and other opportunistic disease prevention training to Kenya. HEARTS’s efforts are in response to the call of those who lack access to the basic knowledge necessary to survive.
-			$intro = '<h1>HEART is dedicated to empowering Kenyans, through education and resources, to create a healthy, disease free life for themselves and their communities. <a href="/about">Read more...</a></h1>';
-
-			$intro = elgg_view('output/longtext', array('value' => $intro));
-
-			echo "<div class=\"elgg-module elgg-module-featured\"><div class=\"elgg-body\">$intro</div></div>";
-			$groups = elgg_list_entities_from_metadata(array('metadata_name' => 'featured_group', 'metadata_value' => 'yes', 'types' => 'group'));
-
-			echo elgg_view_module('info', '', $groups);
 		?>
 	</div>
-	<div class="elgg-col elgg-col-1of3">
-	<?php
-		if (elgg_is_active_plugin('thewire')) {
-			$body = elgg_list_entities(array(
-				'type' => 'object',
-				'subtype' => 'thewire',
-				'limit' => 8,
-				'pagination' => FALSE,
-				'view_type_toggle' => FALSE,
-				'full_view' => FALSE,
-			));
+</div>
+<h2 class="HEART-heading-motto"><?php echo elgg_echo('HEART:motto'); ?></h2>
+<div class="elgg-grid pal">
+	<div class="elgg-col elgg-col-2of3 mrl">
+		<?php
+			//Through the teaching of volunteer teams, community development and empowerment of local leaders, HEART provides pivotal HIV/AIDS and other opportunistic disease prevention training to Kenya. HEARTS’s efforts are in response to the call of those who lack access to the basic knowledge necessary to survive.
+// 			$intro = '<h1>HEART is dedicated to empowering Kenyans, through education and resources, to create a healthy, disease free life for themselves and their communities. <a href="/about">Read more...</a></h1>';
 
-			echo elgg_view_module('info', elgg_echo('thewire'), $body);
-		}
-	?>
+// 			echo elgg_view('output/longtext', array('value' => $intro));
+
+			echo elgg_list_entities(array(
+				'type' => 'object',
+				'subtypes' => array('blog', 'album'),
+				'full_view' => false,
+				'list_type' => 'list',
+				'limit' => 5,
+				'pagination' => false,
+			));
+		?>
+	</div>
+	<div class="elgg-col elgg-col-1of3 pll">
+		<?php echo elgg_view_module('aside', 'Mission Statement', elgg_echo('HEART:mission'), array('class' => 'mbl')); ?>
+		<?php echo elgg_view_module('aside', 'Guiding Scripture', elgg_echo('HEART:scripture')); ?>
+		<a href="http://africaheart.com/ourWork.html">
+			<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/Heart-Wheel-on-Gold.jpg" />
+		</a>
 	</div>
 </div>

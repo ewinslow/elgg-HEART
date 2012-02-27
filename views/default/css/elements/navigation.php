@@ -6,6 +6,7 @@
  * @subpackage UI
  */
 ?>
+/*<style>*/
 
 /* ***************************************
 	PAGINATION
@@ -31,6 +32,7 @@
 	border-color: #9F1C00;
 	text-decoration: none;
 }
+
 .elgg-pagination .elgg-state-disabled span {
 	color: #CCC;
 	border-color: #CCC;
@@ -138,15 +140,14 @@
 *************************************** */
 .elgg-menu-site {
 	background: #333;
-	position:absolute;
-	width:100%;
+	position: absolute;
+	width: 100%;
 	z-index: 101;
 }
 
 .elgg-menu-site > li {
-	display:inline-block;
-	margin-right: 1px;
-	position:relative;
+	display: inline-block;
+	position: relative;
 	width: 16.66666%;
 }
 
@@ -157,9 +158,13 @@
 .elgg-menu-site li > a {
 	color: #f5e7b6;
 	display: block;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	font-weight: bold;
 	padding: 4px 13px;
+}
+
+.elgg-menu-site .elgg-menu-item-donate > a {
+	color: #64AAD0;
 }
 
 .elgg-menu-site li > a:hover {
@@ -188,7 +193,7 @@
 	display: none;
 	position: absolute;
 	left: 0;
-	min-width: 150px;
+	min-width: 100%;
 	top: 100%;
 	white-space: nowrap;
 	z-index: 2;

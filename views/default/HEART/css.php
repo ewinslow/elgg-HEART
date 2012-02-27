@@ -1,3 +1,4 @@
+/* <style> */
 /**
  * Colors:
  *   #663600 -- brown    (Pantone 1545 C)
@@ -10,6 +11,8 @@
  *   #FFD57D -- Yellowish
  *   #FFEBBF -- Light yellowish
  */
+
+
 body {
 	background-image: url(<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/bg_main.jpg);
 }
@@ -23,8 +26,13 @@ body {
 	margin: 0;
 }
 
-.elgg-image-block > .elgg-image{
+.elgg-image-block > .elgg-image {
 	margin-right: 10px;
+	max-width: 50%;
+}
+
+.elgg-image-block.elgg-size-large > .elgg-image {
+	margin-right: 20px;
 }
 
 .elgg-list-content {
@@ -33,7 +41,10 @@ body {
 
 .elgg-main {padding:0}
 
-img {max-width: 100%}
+img {
+	max-height:100%;
+	max-width: 100%;
+}
 
 .HEART-banner {
 	position:relative;
@@ -96,15 +107,59 @@ img {max-width: 100%}
 	width:50%;
 }
 
+.elgg-gallery-cozy > li {
+	margin: 20px;
+}
+
+.tidypics-gallery > li {
+	margin: 0 5px 1px 0;
+	padding: 0;
+}
+
 .elgg-river > li {
 	padding: 7px 0;
 }
 
-.HEART-heading-motto {
-	background: #444;
-	background: -webkit-gradient(linear, left bottom, left top, from(#333), to(#555));
-	font-size:24px;
-	padding: 8px 0 6px;
-	color: #F5E7B6;
-	text-align:center;
+.elgg-object-blog-summary {
+	margin-bottom: 20px;
+}
+
+.elgg-object-blog-summary > .elgg-image {
+	padding-right: 10px;
+	border-right: 1px solid #ccc;
+	width: 100px;
+	text-align: right;
+}
+
+.elgg-ajax-loader {
+	background-color: transparent;
+}
+
+.elgg-photo {
+	box-sizing: border-box;
+	border: 0;
+	padding: 0;
+	background: none;
+}
+
+.tidypics-list-album {
+	overflow: hidden;
+	height: 100px;
+}
+
+.tidypics-list-album > li {
+	margin-right: 5px;
+}
+
+.HEART-legal {
+	color: #999;
+	text-align: right;	
+}
+
+.elgg-item .elgg-content {
+	margin: 0;
+}
+
+.elgg-list-entity > .elgg-item {
+	margin-bottom: 2em;
 }

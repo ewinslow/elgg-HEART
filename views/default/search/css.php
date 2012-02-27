@@ -24,17 +24,12 @@
 }
 
 .elgg-search input[type=text] {
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border: 1px solid #71b9f7;
+	background: white url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png) no-repeat 4px -915px;
+	border: 1px solid white;
+	border-radius: 2px;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 2px 4px 2px 26px;
-	background-color: white;
-	background-image: url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png);
-	background-position: 2px -257px;
-	background-repeat: no-repeat;
-	border: 1px solid white;
 }
 
 .search-list li {
