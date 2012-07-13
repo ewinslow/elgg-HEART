@@ -6,21 +6,47 @@
  * Whatever you put in this view will appear on the front page of your site.
  *
  */
+ 
+$donate = elgg_view('output/url', array(
+	'href' => 'http://africaheart.com/programsupport.html',
+	'text' => elgg_echo('donate'),
+	'class' => 'elgg-button elgg-button-special elgg-button-large',
+	'title' => 'Click me!',
+));
+
+$projects = array(
+	array(
+		'name' => 'WEEP',
+		'briefdescription' => 'Bringing HIV positive mothers from death to life',
+		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/WEEP.jpg')
+	),
+	array(
+		'name' => 'Kids for School',
+		'briefdescription' => 'One Goat + Uniform = A Childs Future',
+		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/KFS.jpg')
+	),
+	array(
+		'name' => 'Greenhouses',
+		'briefdescription' => 'Providing a community with food security, nutrition, and income',
+		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/Greenhouse.jpg')
+	),
+);
+
 ?>
-<div class="HEART-banner">
-	<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/photos/TaitaStudent-banner.jpg" height="362" width="100%" />
-	<div class="HEART-banner-text">
-		<p><?php echo elgg_echo('HEART:vision'); ?></p>
-		<?php
-			echo elgg_view('output/url', array(
-				'href' => 'http://africaheart.com/programsupport.html',
-				'text' => elgg_echo('donate'),
-				'class' => 'elgg-button elgg-button-special elgg-button-large',
-				'title' => 'Click me!',
-			));
-		?>
-	</div>
-</div>
+
+<h3 class="HEART-hidden-accessible">Project banners</h3>
+<ul class="elgg-slides HEART-banners">
+	<?php foreach ($projects as $project): ?>
+	<li>
+		<div class="HEART-banners-caption">
+			<h4><?php echo $project['name']; ?></h4>
+			<p><?php echo $project['briefdescription']; ?><p>
+			<?php echo $donate; ?>
+		</div>
+		<img src="<?php echo $project['iconUrl']; ?>" alt="" />
+	</li>
+	<?php endforeach; ?>
+</ul>
 <h2 class="HEART-heading-motto"><?php echo elgg_echo('HEART:motto'); ?></h2>
 <div class="elgg-grid pal">
 	<div class="elgg-col elgg-col-2of3 mrl">

@@ -4,18 +4,14 @@
 	<author>Evan Winslow</author>
 	<version>1.0</version>
 	<description>HEART website theme + customizations</description>
-	<website>http://www.africaheart.com/</website>
-	<copyright>(C) 2011 Evan Winslow</copyright>
+	<website>http://www.africaheart.org/</website>
+	<copyright>(C) 2012 Evan Winslow</copyright>
 
 	<requires>
 		<type>elgg_release</type>
 		<version>1.8.0</version>
 	</requires>
 
-	<requires>
-		<type>plugin</type>
-		<name>blog_tools</name>
-	</requires>
 	<requires>
 		<type>plugin</type>
 		<name>custom_index</name>

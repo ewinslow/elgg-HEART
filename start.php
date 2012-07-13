@@ -43,7 +43,17 @@ function HEART_init() {
 	elgg_register_js('elgg.backdate', 'mod/HEART/js/entity/backdate.js', 'footer');
 	elgg_load_js('elgg.backdate');
 	
-	elgg_extend_view('css/elgg', 'HEART/css');
+	elgg_register_simplecache_view('js/jquery/cycle');
+	elgg_register_js('jquery.cycle', elgg_get_simplecache_url('js', 'jquery/cycle'), 'footer');
+	elgg_register_simplecache_view('js/elgg/slides');
+	elgg_register_js('elgg.slides', elgg_get_simplecache_url('js', 'elgg/slides'), 'footer');
+	
+	elgg_load_js('jquery.cycle');
+	elgg_load_js('elgg.slides');
+	
+	elgg_extend_view('css/elgg', 'css/HEART/banners');
+	elgg_extend_view('css/elgg', 'css/HEART');
+
 	elgg_extend_view('page/elements/head', 'HEART/metatags', 1);
 	elgg_extend_view('page/elements/foot', 'facebook/jssdk');
 
