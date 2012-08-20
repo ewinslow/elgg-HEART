@@ -97,7 +97,7 @@ function HEART_init() {
 	elgg_register_menu_item('site', array(
 		'name' => 'about',
 		'text' => "About",
-		'href' => 'http://africaheart.com/about.html',
+		'href' => '/about.html',
 		'priority' => 20,
 	));
 
@@ -105,7 +105,7 @@ function HEART_init() {
 		'parent_name' => 'about',
 		'name' => 'vision',
 		'text' => 'Our Vision',
-		'href' => 'http://africaheart.com/about.html',
+		'href' => '/about.html',
 		'priority' => 21,
 	));
 	
@@ -113,7 +113,7 @@ function HEART_init() {
 		'parent_name' => 'about',
 		'name' => 'team',
 		'text' => 'Our Team',
-		'href' => 'http://africaheart.com/leaderStaff.html',
+		'href' => '/leaderStaff.html',
 		'priority' => 22,
 	));
 	
@@ -129,7 +129,7 @@ function HEART_init() {
 		'parent_name' => 'about',
 		'name' => 'contactus',
 		'text' => 'Contact Us',
-		'href' => 'http://africaheart.com/contactUs.html',
+		'href' => '/contactUs.html',
 		'priority' => 24,
 	));
 	
@@ -137,7 +137,7 @@ function HEART_init() {
 		'parent_name' => 'about',
 		'name' => 'kenya',
 		'text' => 'About Kenya',
-		'href' => 'http://africaheart.com/aboutKenya.html',
+		'href' => '/aboutKenya.html',
 		'priority' => 25,
 	));
 	
@@ -145,7 +145,7 @@ function HEART_init() {
 	elgg_register_menu_item('site', array(
 		'name' => 'projects',
 		'text' => 'Projects',
-		'href' => 'http://africaheart.com/ourWork.html',
+		'href' => '/ourWork.html',
 		'priority' => 30,
 	));
 	
@@ -175,7 +175,7 @@ function HEART_init() {
 	elgg_register_menu_item('site', array(
 		'name' => 'news',
 		'text' => 'News',
-		'href' => 'http://africaheart.com/reports.html',
+		'href' => '/reports.html',
 		'priority' => 40,
 	));
 	
@@ -202,7 +202,7 @@ function HEART_init() {
 		'parent_name' => 'news',
 		'name' => 'videos',
 		'text' => 'Videos',
-		'href' => 'http://africaheart.com/videos.html',
+		'href' => '/videos.html',
 		'priority' => 43,
 	));
 		
@@ -211,7 +211,7 @@ function HEART_init() {
 		'parent_name' => 'news',
 		'name' => 'pulse',
 		'text' => 'Pulse Newsletters',
-		'href' => 'http://africaheart.com/reports.html',
+		'href' => '/reports.html',
 		'priority' => 44,
 	));
 	
@@ -219,7 +219,7 @@ function HEART_init() {
 	elgg_register_menu_item('site', array(
 		'name' => 'join',
 		'text' => 'Join',
-		'href' => 'http://africaheart.com/getInvolved.html',
+		'href' => '/getInvolved.html',
 		'priority' => 50,
 	));
 	
@@ -228,7 +228,7 @@ function HEART_init() {
 		'parent_name' => 'join',
 		'name' => 'shortterm',
 		'text' => 'Short-term Mission',
-		'href' => 'http://africaheart.com/forms.html',
+		'href' => '/forms.html',
 		'priority' => 51,
 	));
 	
@@ -237,7 +237,7 @@ function HEART_init() {
 		'parent_name' => 'join',
 		'name' => 'internship',
 		'text' => 'Summer Internship',
-		'href' => 'http://africaheart.com/forms.html',
+		'href' => '/forms.html',
 		'priority' => 52,
 	));
 	
@@ -246,7 +246,7 @@ function HEART_init() {
 		'parent_name' => 'join',
 		'name' => 'internship',
 		'text' => 'Staff Positions',
-		'href' => 'http://africaheart.com/forms.html',
+		'href' => '/forms.html',
 		'priority' => 53,
 	));
 	
@@ -255,7 +255,7 @@ function HEART_init() {
 		'parent_name' => 'join',
 		'name' => 'financial',
 		'text' => 'Financial Support',
-		'href' => 'http://africaheart.com/programsupport.html',
+		'href' => '/programsupport.html',
 		'priority' => 54,
 	));
 	
@@ -263,7 +263,7 @@ function HEART_init() {
 	elgg_register_menu_item('site', array(
 		'name' => 'donate',
 		'text' => 'Donate',
-		'href' => 'http://africaheart.com/programsupport.html',
+		'href' => '/programsupport.html',
 		'priority' => 60,
 	));
 	
@@ -271,7 +271,7 @@ function HEART_init() {
 		'parent_name' => 'donate',
 		'name' => 'donate-online',
 		'text' => 'Online',
-		'href' => 'http://africaheart.com/donate_online.html',
+		'href' => '/donate_online.html',
 		'priority' => 61,
 	));
 	
@@ -279,7 +279,7 @@ function HEART_init() {
 		'parent_name' => 'donate',
 		'name' => 'donate-phone',
 		'text' => 'By phone',
-		'href' => 'http://africaheart.com/donate[phone].html',
+		'href' => '/donate[phone].html',
 		'priority' => 62,
 	));
 	
@@ -287,7 +287,7 @@ function HEART_init() {
 		'parent_name' => 'donate',
 		'name' => 'donate-mail',
 		'text' => 'By mail',
-		'href' => 'http://africaheart.com/donate[mail].html',
+		'href' => '/donate[mail].html',
 		'priority' => 63,
 	));
 	
