@@ -64,8 +64,14 @@ img {
 	padding: 5px;
 }
 
-.elgg-list {margin:0; border:0}
-.elgg-list > li {border:0}
+.elgg-list {
+	margin:0; 
+	border:0;
+}
+
+.elgg-list > li {
+	border:0;
+}
 
 .elgg-gallery > li {
 	display: inline-block;

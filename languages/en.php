@@ -15,7 +15,8 @@ add_translation("en", array(
 
 	'thewire' => 'The Pulse',
 	
-	'HEART:mission' => 'HEART and our partners are empowering current and future generations
+	'HEART:mission' => 'HEART (<b>H</b>ealth <b>E</b>ducation <b>A</b>frica <b>R</b>esource <b>T</b>eam)
+	                    and our partners are empowering current and future generations
 	                    of Kenyan people through disease prevention education and economic
 	                    development. This is accomplished through Christian compassion, health
 	                    interventions and resources as we promote physical, spiritual and
