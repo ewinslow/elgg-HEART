@@ -16,9 +16,9 @@
 }
 
 body {
-	line-height: normal;
 	font-family: "Trebuchet MS", "Times New Roman", serif;
 	font-size: 14px;
+	line-height: normal;
 }
 
 p {
@@ -39,8 +39,8 @@ blockquote {
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #7D0B00;
-	font-weight: bold;
 	font-family: "Trebuchet MS", "Times New Roman", serif;	
+	font-weight: bold;
 	margin-bottom: 0.5em;
 }
 h1 { font-size: 2em; }
@@ -54,16 +54,18 @@ h6 { font-size: 0.8em; }
 	font-family: Monaco, "Courier New", Courier, monospace;
 }
 
-a:hover {text-decoration:none !important}
+a:hover {
+	text-decoration:none !important;
+}
 
 .elgg-heading-site {
 	color: white;
+	font-family: "Colonna MT Regular", Georgia, times, serif;
 	font-style: italic;
 	line-height: 1.2em;
-	font-family: "Colonna MT Regular", Georgia, times, serif;
-	text-shadow: 1px 2px 4px #333333;
-	text-align: center;
 	padding: 30px 20px;
+	text-align: center;
+	text-shadow: 1px 2px 4px #333333;
 }
 
 h1.elgg-heading-site {
@@ -73,9 +75,9 @@ h1.elgg-heading-site {
 .elgg-heading-site:hover {	text-decoration: none}
 
 .elgg-heading-main {
-	text-align:center;
+	font-size: 24px;
 	padding: 8px 0 6px;
-	font-size:24px;
+	text-align: center;
 }
 .elgg-heading-basic {
 	color: #0054A7;
@@ -86,8 +88,8 @@ h1.elgg-heading-site {
 	background: #444;
 	background: -webkit-gradient(linear, left bottom, left top, from(#333), to(#555));
 	color: #F5E7B6;
-	font-size: 24px;
 	font-family: "Colonna MT Regular";
+	font-size: 24px;
 	margin: 0;
 	padding: 8px 0 6px;
 	text-align: center;
@@ -99,20 +101,26 @@ h1.elgg-heading-site {
 }
 
 .elgg-author-name {
-	font-weight:bold;
+	font-weight: bold;
 }
 
-a {color:#7d0b00}
-a:hover{color: #E65217}
+a {
+	color: #7d0b00;
+}
+
+a:hover, a:focus {
+	color: #E65217;
+}
 
 .elgg-output p {
 	margin-bottom: 1em;
 }
 
 .elgg-output a {
-	text-decoration:underline;
+	text-decoration: underline;
 }
 
-.elgg-output a:hover {
-	text-decoration:underline;
+.elgg-output a:hover,
+.elgg-output a:focus {
+	text-decoration: underline;
 }

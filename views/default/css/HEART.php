@@ -22,8 +22,8 @@ body {
 }
 
 .elgg-image-block {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 .elgg-image-block > .elgg-image {
@@ -36,26 +36,28 @@ body {
 }
 
 .elgg-list-content {
-	margin:0;
+	margin: 0;
 }
 
-.elgg-main {padding:0}
+.elgg-main {
+	padding: 0;
+}
 
 img {
-	max-height:100%;
+	max-height: 100%;
 	max-width: 100%;
 }
 
 .elgg-page-header .elgg-search {
-	position:absolute;
-	top: 10px;
+	position: absolute;
 	right: 10px;
+	top: 10px;
 }
 
 .elgg-col:last-child {
-	overflow:hidden;
-	float:none;
-	width:auto;
+	float: none;
+	overflow: hidden;
+	width: auto;
 }
 
 .elgg-entity-list > li {
@@ -75,7 +77,7 @@ img {
 }
 
 .elgg-gallery-2 > li {
-	width:50%;
+	width: 50%;
 }
 
 .elgg-gallery-cozy > li {
@@ -96,10 +98,10 @@ img {
 }
 
 .elgg-object-blog-summary > .elgg-image {
-	padding-right: 10px;
 	border-right: 1px solid #ccc;
-	width: 100px;
+	padding-right: 10px;
 	text-align: right;
+	width: 100px;
 }
 
 .elgg-ajax-loader {
@@ -107,15 +109,17 @@ img {
 }
 
 .elgg-photo {
-	box-sizing: border-box;
-	border: 0;
-	padding: 0;
 	background: none;
+	border: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
 }
 
 .tidypics-list-album {
-	overflow: hidden;
 	height: 100px;
+	overflow: hidden;
 }
 
 .tidypics-list-album > li {
@@ -136,6 +140,6 @@ img {
 }
 
 .HEART-hidden-accessible {
-	position: absolute;
 	left: -9999em;
+	position: absolute;
 }

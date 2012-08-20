@@ -11,13 +11,13 @@ form div {
 }
 label {font-weight:bold}
 input[type=text], input[type=password], textarea {
-	width:98%;
 	padding: 3px;
+	width: 98%;
 }
 
 input, textarea {
-	font-size: 13px;
 	font-family: "trebuchet ms", arial, sans-serif;
+	font-size: 13px;
 }
 
 .mceLayout,
