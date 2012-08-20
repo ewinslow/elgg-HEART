@@ -7,29 +7,37 @@
  *
  */
  
-$donate = elgg_view('output/url', array(
+
+
+$donateOptions = array(
 	'href' => 'http://africaheart.com/programsupport.html',
 	'text' => elgg_echo('donate'),
 	'class' => 'elgg-button elgg-button-special elgg-button-large',
 	'title' => 'Click me!',
-));
+);
 
 //TODO(evan): Make these all the same height -- ideally 480px...
 $projects = array(
 	array(
 		'name' => 'WEEP',
+		'link' => '/weep',
 		'briefdescription' => 'Bringing HIV positive mothers from death to life',
-		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/WEEP-960x480.jpg')
+		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/WEEP-960x480.jpg'),
+		'paypalId' => 'DY472GNDSD7AU',
 	),
 	array(
 		'name' => 'Kids for School',
-		'briefdescription' => 'One Goat + Uniform = A Childs Future',
-		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/KFS-960x480.jpg')
+		'link' => '/kfs',
+		'briefdescription' => 'One Goat + Uniform = A Child\'s Future',
+		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/KFS-960x480.jpg'),
+		'paypalId' => 'GP9ADSADRLMCW',
 	),
 	array(
 		'name' => 'Greenhouses',
+		'link' => '/gfc',
 		'briefdescription' => 'Providing a community with food security, nutrition, and income',
 		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/Greenhouse-960x480.jpg'),
+		'paypalId' => 'YFHMJHMXQ8562',
 	),
 );
 
@@ -40,9 +48,12 @@ $projects = array(
 	<?php foreach ($projects as $project): ?>
 	<li>
 		<div class="HEART-banners-caption">
-			<h4><?php echo $project['name']; ?></h4>
+			<a href="<?php echo $project['link']; ?>"><h4><?php echo $project['name']; ?></h4></a>
 			<p><?php echo $project['briefdescription']; ?><p>
-			<?php echo $donate; ?>
+			<?php
+				$donateOptions['href'] = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id={$project['paypalId']}";
+				echo elgg_view('output/url', $donateOptions);
+			?>
 		</div>
 		<img src="<?php echo $project['iconUrl']; ?>" alt="" height="480" width="960" />
 	</li>

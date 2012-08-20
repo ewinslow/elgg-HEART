@@ -40,6 +40,9 @@ function HEART_init() {
 	elgg_register_entity_url_handler('user', 'all', 'HEART_user_url_handler');
 
 	elgg_register_action('entity/backdate', dirname(__FILE__) . '/actions/entity/backdate.php');
+	
+	elgg_register_js('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js');
+	elgg_register_js('jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js');
 	elgg_register_js('elgg.backdate', 'mod/HEART/js/entity/backdate.js', 'footer');
 	elgg_load_js('elgg.backdate');
 	
@@ -124,21 +127,29 @@ function HEART_init() {
 		'href' => 'http://www.liftupafrica.org/project_africa_heart_greenhouse_project.php',
 		'priority' => 23,
 	));
+
+	elgg_register_menu_item('site', array(
+		'parent_name' => 'about',
+		'name' => 'lodge',
+		'text' => 'Our Lodge',
+		'href' => '/lodge',
+		'priority' => 24,
+	));
 	
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'about',
 		'name' => 'contactus',
 		'text' => 'Contact Us',
 		'href' => '/contactUs.html',
-		'priority' => 24,
+		'priority' => 25,
 	));
 	
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'about',
 		'name' => 'kenya',
 		'text' => 'About Kenya',
-		'href' => '/aboutKenya.html',
-		'priority' => 25,
+		'href' => '/kenya',
+		'priority' => 26,
 	));
 	
 	// PROJECTS
@@ -153,10 +164,12 @@ function HEART_init() {
 		'kfs' => 'Kids for School',
 		'weep' => "WEEP",
 		'ffg' => 'Freedom for Girls',
+		'gfc' => 'Greenhouses',
 		'props' => 'PROPS',
 		'yep' => 'Youth Empowerment',
 		'cm' => "Children's Ministry",
 		'msni' => "Medical, Surgical, Nutritional",
+		'seminars' => 'Health Seminars',
 	);
 
 	$i = 31;
@@ -175,7 +188,7 @@ function HEART_init() {
 	elgg_register_menu_item('site', array(
 		'name' => 'news',
 		'text' => 'News',
-		'href' => '/reports.html',
+		'href' => '/blog',
 		'priority' => 40,
 	));
 	
@@ -263,7 +276,7 @@ function HEART_init() {
 	elgg_register_menu_item('site', array(
 		'name' => 'donate',
 		'text' => 'Donate',
-		'href' => '/programsupport.html',
+		'href' => 'https://www.paypal.com/cgi-bin/webscr?hosted_button_id=G49Y74KAAFQN2&cmd=_s-xclick',
 		'priority' => 60,
 	));
 	
@@ -271,7 +284,7 @@ function HEART_init() {
 		'parent_name' => 'donate',
 		'name' => 'donate-online',
 		'text' => 'Online',
-		'href' => '/donate_online.html',
+		'href' => '/programsupport.html',
 		'priority' => 61,
 	));
 	

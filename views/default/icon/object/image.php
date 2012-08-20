@@ -28,6 +28,7 @@ switch ($vars['size']) {
 		break;
 	case 'medium':
 		$width = 100;
+		$vars['size'] = 'small';
 		break;
 	case 'small':
 		$width = 40;
@@ -54,7 +55,7 @@ if (isset($vars['img_class'])) {
 }
 $class = "elgg-photo $class";
 
-$img_src = $entity->getIconURL('master');
+$img_src = $entity->getIconURL($vars['size']);
 $img_src = elgg_format_url($img_src);
 $img = elgg_view('output/img', array(
 	'src' => $img_src,

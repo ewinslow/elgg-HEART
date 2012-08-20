@@ -8,10 +8,11 @@
 	overflow: hidden;
 	position: relative;
 	width: 100%;
+	height: 480px;
 }
 
 .HEART-banners li {
-	position: relative;
+	position: absolute;
 }
 
 .HEART-banners img {

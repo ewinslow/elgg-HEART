@@ -14,6 +14,7 @@
 
 
 body {
+	background-color: #7d0b00;
 	background-image: url(<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/bg_main.jpg);
 }
 
