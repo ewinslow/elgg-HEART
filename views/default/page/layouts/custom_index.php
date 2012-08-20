@@ -14,21 +14,22 @@ $donate = elgg_view('output/url', array(
 	'title' => 'Click me!',
 ));
 
+//TODO(evan): Make these all the same height -- ideally 480px...
 $projects = array(
 	array(
 		'name' => 'WEEP',
 		'briefdescription' => 'Bringing HIV positive mothers from death to life',
-		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/WEEP.jpg')
+		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/WEEP-960x480.jpg')
 	),
 	array(
 		'name' => 'Kids for School',
 		'briefdescription' => 'One Goat + Uniform = A Childs Future',
-		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/KFS.jpg')
+		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/KFS-960x480.jpg')
 	),
 	array(
 		'name' => 'Greenhouses',
 		'briefdescription' => 'Providing a community with food security, nutrition, and income',
-		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/Greenhouse.jpg')
+		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/Greenhouse-960x480.jpg'),
 	),
 );
 
@@ -43,7 +44,7 @@ $projects = array(
 			<p><?php echo $project['briefdescription']; ?><p>
 			<?php echo $donate; ?>
 		</div>
-		<img src="<?php echo $project['iconUrl']; ?>" alt="" />
+		<img src="<?php echo $project['iconUrl']; ?>" alt="" height="480" width="960" />
 	</li>
 	<?php endforeach; ?>
 </ul>
