@@ -13,6 +13,11 @@
 
 .HEART-banners li {
 	position: absolute;
+	z-index: 0;
+}
+
+.HEART-banners li:first-child {
+	z-index: 1;	
 }
 
 .HEART-banners img {
