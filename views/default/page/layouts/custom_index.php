@@ -82,7 +82,7 @@ $projects = array(
 		<?php echo elgg_view_module('aside', 'Mission Statement', elgg_echo('HEART:mission'), array('class' => 'mbl')); ?>
 		<?php echo elgg_view_module('aside', 'Guiding Scripture', elgg_echo('HEART:scripture')); ?>
 		<a href="http://africaheart.com/ourWork.html">
-			<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/Heart-Wheel-on-Gold.jpg" />
+			<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/HEART-Wheel.jpg" />
 		</a>
 	</div>
 </div>
