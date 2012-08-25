@@ -20,6 +20,8 @@ function HEART_init() {
 	elgg_unregister_menu_item('page', 'appearance:menu_items');
 	elgg_unregister_menu_item('page', 'appearance:profile_fields');
 	elgg_unregister_menu_item('page', 'appearance:default_widgets');
+
+	elgg_unregister_menu_item('topbar', 'elgg_logo');
 	
 	// Remove friend-related pages
 	elgg_unregister_page_handler('friends', 'friends_page_handler');
