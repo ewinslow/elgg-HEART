@@ -22,6 +22,10 @@
 	</requires>
 	<requires>
 		<type>plugin</type>
+		<name>html5</name>
+	</requires>
+	<requires>
+		<type>plugin</type>
 		<name>profile</name>
 	</requires>
 	<requires>

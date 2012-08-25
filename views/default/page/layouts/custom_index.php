@@ -16,26 +16,25 @@ $donateOptions = array(
 	'title' => 'Click me!',
 );
 
-//TODO(evan): Make these all the same height -- ideally 480px...
 $projects = array(
 	array(
 		'name' => 'WEEP',
 		'link' => '/weep',
-		'briefdescription' => 'Bringing HIV positive mothers from death to life',
+		'briefdescription' => 'Orphan Prevention Program -- Bringing HIV positive mothers from death to life',
 		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/WEEP-960x480.jpg'),
 		'paypalId' => 'DY472GNDSD7AU',
 	),
 	array(
 		'name' => 'Kids for School',
 		'link' => '/kfs',
-		'briefdescription' => 'One Goat + Uniform = A Child\'s Future',
+		'briefdescription' => 'One Goat + Uniform = A Child\'s Future -- Education through Empowerment',
 		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/KFS-960x480.jpg'),
 		'paypalId' => 'GP9ADSADRLMCW',
 	),
 	array(
 		'name' => 'Greenhouses',
 		'link' => '/gfc',
-		'briefdescription' => 'Providing a community with food security, nutrition, and income',
+		'briefdescription' => 'Providing a community with food security, nutrition, and income-generating activity for empowerment',
 		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/Greenhouse-960x480.jpg'),
 		'paypalId' => 'YFHMJHMXQ8562',
 	),
@@ -79,10 +78,11 @@ $projects = array(
 		?>
 	</div>
 	<div class="elgg-col elgg-col-1of3 pll">
-		<?php echo elgg_view_module('aside', 'Mission Statement', elgg_echo('HEART:mission'), array('class' => 'mbl')); ?>
-		<?php echo elgg_view_module('aside', 'Guiding Scripture', elgg_echo('HEART:scripture')); ?>
+		<?php echo elgg_view_module('aside', 'Vision Statement', elgg_echo('HEART:vision')); ?>
 		<a href="http://africaheart.com/ourWork.html">
-			<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/HEART-Wheel.jpg" />
+			<img src="<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/HEART-Wheel.jpg" alt="Our Work" class="mbl" />
 		</a>
+		<?php echo elgg_view_module('aside', 'Mission Statement', elgg_echo('HEART:mission')); ?>
+		<?php echo elgg_view_module('aside', 'Guiding Scripture', elgg_echo('HEART:scripture')); ?>
 	</div>
 </div>
