@@ -19,21 +19,21 @@ $donateOptions = array(
 $projects = array(
 	array(
 		'name' => 'WEEP',
-		'link' => '/weep',
+		'link' => elgg_normalize_url('/weep'),
 		'briefdescription' => 'Orphan Prevention Program -- Bringing HIV positive mothers from death to life',
 		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/WEEP-960x480.jpg'),
 		'paypalId' => 'DY472GNDSD7AU',
 	),
 	array(
 		'name' => 'Kids for School',
-		'link' => '/kfs',
+		'link' => elgg_normalize_url('/kfs'),
 		'briefdescription' => 'One Goat + Uniform = A Child\'s Future -- Education through Empowerment',
 		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/KFS-960x480.jpg'),
 		'paypalId' => 'GP9ADSADRLMCW',
 	),
 	array(
 		'name' => 'Greenhouses',
-		'link' => '/gfc',
+		'link' => elgg_normalize_url('/gfc'),
 		'briefdescription' => 'Providing a community with food security, nutrition, and income-generating activity for empowerment',
 		'iconUrl' => elgg_normalize_url('/mod/HEART/assets/graphics/photos/Greenhouse-960x480.jpg'),
 		'paypalId' => 'YFHMJHMXQ8562',
@@ -54,7 +54,9 @@ $projects = array(
 				echo elgg_view('output/url', $donateOptions);
 			?>
 		</div>
-		<img src="<?php echo $project['iconUrl']; ?>" alt="" height="480" width="960" />
+		<a href="<?php echo $project['link']; ?>">
+			<img src="<?php echo $project['iconUrl']; ?>" alt="" height="480" width="960" />
+		</a>
 	</li>
 	<?php endforeach; ?>
 </ul>
