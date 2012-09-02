@@ -104,15 +104,23 @@ function HEART_init() {
 	elgg_register_menu_item('site', array(
 		'name' => 'about',
 		'text' => "About",
-		'href' => '/about.html',
+		'href' => '/vision',
 		'priority' => 20,
+	));
+
+	elgg_register_menu_item('site', array(
+		'parent_name' => 'about',
+		'name' => 'story',
+		'text' => 'Our Story',
+		'href' => '/story',
+		'priority' => 20
 	));
 
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'about',
 		'name' => 'vision',
 		'text' => 'Our Vision',
-		'href' => '/about.html',
+		'href' => '/vision',
 		'priority' => 21,
 	));
 	
@@ -128,7 +136,7 @@ function HEART_init() {
 		'parent_name' => 'about',
 		'name' => 'partners',
 		'text' => 'Our Partners',
-		'href' => 'http://www.liftupafrica.org/project_africa_heart_greenhouse_project.php',
+		'href' => '/partners',
 		'priority' => 23,
 	));
 
@@ -144,7 +152,7 @@ function HEART_init() {
 		'parent_name' => 'about',
 		'name' => 'contactus',
 		'text' => 'Contact Us',
-		'href' => '/contactUs.html',
+		'href' => '/contact',
 		'priority' => 25,
 	));
 	
@@ -202,7 +210,7 @@ function HEART_init() {
 		'parent_name' => 'news',
 		'name' => 'blogs',
 		'text' => 'Blogs',
-		'href' => '/blog/all',
+		'href' => '/blog',
 		'priority' => 41,
 	));
 	
@@ -219,7 +227,7 @@ function HEART_init() {
 		'parent_name' => 'news',
 		'name' => 'videos',
 		'text' => 'Videos',
-		'href' => '/videos.html',
+		'href' => '/videos',
 		'priority' => 43,
 	));
 		
@@ -228,7 +236,7 @@ function HEART_init() {
 		'parent_name' => 'news',
 		'name' => 'pulse',
 		'text' => 'Pulse Newsletters',
-		'href' => '/reports.html',
+		'href' => '/pulse',
 		'priority' => 44,
 	));
 	
@@ -236,34 +244,34 @@ function HEART_init() {
 	elgg_register_menu_item('site', array(
 		'name' => 'join',
 		'text' => 'Join',
-		'href' => '/getInvolved.html',
+		'href' => '/join',
 		'priority' => 50,
 	));
 	
 	// short-term mission
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'join',
-		'name' => 'shortterm',
-		'text' => 'Short-term Mission',
-		'href' => '/forms.html',
+		'name' => 'join-short-term',
+		'text' => 'Short-term Team',
+		'href' => '/join/short-term',
 		'priority' => 51,
 	));
 	
 	// summer internship
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'join',
-		'name' => 'internship',
+		'name' => 'join-intern',
 		'text' => 'Summer Internship',
-		'href' => '/forms.html',
+		'href' => '/join/intern',
 		'priority' => 52,
 	));
 	
 	// staff position
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'join',
-		'name' => 'internship',
+		'name' => 'join-staff',
 		'text' => 'Staff Positions',
-		'href' => '/forms.html',
+		'href' => '/join/staff',
 		'priority' => 53,
 	));
 	
@@ -272,7 +280,7 @@ function HEART_init() {
 		'parent_name' => 'join',
 		'name' => 'financial',
 		'text' => 'Financial Support',
-		'href' => '/programsupport.html',
+		'href' => '/donate/online',
 		'priority' => 54,
 	));
 	
@@ -288,7 +296,7 @@ function HEART_init() {
 		'parent_name' => 'donate',
 		'name' => 'donate-online',
 		'text' => 'Online',
-		'href' => '/programsupport.html',
+		'href' => '/donate/online',
 		'priority' => 61,
 	));
 	
@@ -296,7 +304,7 @@ function HEART_init() {
 		'parent_name' => 'donate',
 		'name' => 'donate-phone',
 		'text' => 'By phone',
-		'href' => '/donate[phone].html',
+		'href' => '/donate/phone',
 		'priority' => 62,
 	));
 	
@@ -304,10 +312,25 @@ function HEART_init() {
 		'parent_name' => 'donate',
 		'name' => 'donate-mail',
 		'text' => 'By mail',
-		'href' => '/donate[mail].html',
+		'href' => '/donate/mail',
 		'priority' => 63,
 	));
-	
+
+	elgg_register_menu_item('site', array(
+		'parent_name' => 'donate',
+		'name' => 'donate-corporate',
+		'text' => 'Corporate',
+		'href' => '/donate/corporate',
+		'priority' => 64,
+	));
+
+	elgg_register_menu_item('site', array(
+		'parent_name' => 'donate',
+		'name' => 'donate-stocks',
+		'text' => 'Stocks',
+		'href' => '/donate/stocks',
+		'priority' => 65,
+	));
 	
 	elgg_register_page_handler('profile', 'HEART_profile_page_handler');
 	
