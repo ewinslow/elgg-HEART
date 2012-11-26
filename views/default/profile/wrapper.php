@@ -8,6 +8,16 @@ $user = elgg_get_page_owner_entity();
 <article class="elgg-image-block elgg-size-large">
 	<aside class="elgg-image">
 		<?php echo elgg_view_entity_icon($user, 'large'); ?>
+		<br/>
+		<?php 
+			if ($user->donate) {
+				echo elgg_view('output/url', array(
+					'href' => $user->donate,
+					'text' => 'Donate',
+					'class' => 'elgg-button elgg-button-large elgg-button-special',
+				));
+			}
+		?>
 	</aside>
 	<div class="elgg-body">
 		<?php echo elgg_view_title(elgg_view('output/text', array('value' => $user->name)), array('class' => 'man')); ?>
