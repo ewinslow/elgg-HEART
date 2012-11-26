@@ -14,12 +14,12 @@
 <div class="clearfloat pbs"></div>
 <div class="elgg-grid">
 	<div class="elgg-col elgg-col-1of2">
-		<div class="fb-like" data-href="http://www.africaheart.com" data-send="false" data-width="450" data-show-faces="false"></div>
+		<div class="fb-like" data-href="<?php echo elgg_get_site_url(); ?>" data-send="false" data-width="450" data-show-faces="false"></div>
 		<div class="clearfloat pbs"></div>
 		
 		<?php
 		echo elgg_view('google/plusone', array(
-			'href' => 'http://africaheart.com/',
+			'href' => elgg_get_site_url(),
 			'annotation' => 'inline', 
 		));
 		?>
