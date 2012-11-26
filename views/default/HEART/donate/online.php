@@ -21,14 +21,14 @@ $donatable_projects = elgg_get_entities_from_metadata(array(
 				<img src="<?php echo $project->getIconURL(); ?>" width="100" height="100" />
 			</div>
 			<div class="elgg-body">
-				<div class="elgg-text"><b>
+				<h3 class="elgg-text">
 				<?php
 					echo elgg_view('output/url', array(
 						'href' => $project->getURL(),
 						'text' => $project->name,
 					));
-				?></b>
-				</div>
+				?>
+				</h3>
 				<div class="elgg-subtext">
 					<?php echo elgg_view('output/text', array('value' => $project->briefdescription)); ?>
 				</div>
