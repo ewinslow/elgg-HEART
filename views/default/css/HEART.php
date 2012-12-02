@@ -150,3 +150,19 @@ img {
 	left: -9999em;
 	position: absolute;
 }
+
+.elgg-line {
+	display: table;
+	width: 100%;
+}
+
+.elgg-line > * {
+	padding-right: .5em;
+	display: table-cell;
+	vertical-align: middle;
+	width: 0;
+}
+
+.elgg-line > .elgg-body {
+	width: 100%;
+}
