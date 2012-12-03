@@ -360,20 +360,8 @@ function HEART_init() {
 }
 
 function HEART_unregister_friend_items($hook, $type, $items, $params) {
-	$result = array();
-	foreach ($items as $item) {
-		switch ($item->getName()) {
-			case 'friends':
-			case 'add_friend':
-			case 'remove_friend':
-				break;
-			default:
-				$result[] = $item;
-				break;
-		}
-	}
-	
-	return $result;
+	$handler = new HeartMenuHandler();
+	return $handler->handlePluginHook($hook, $type, $items, $params);
 }
 
 function HEART_backdate_menu_item($hook, $type, $items, $params) {

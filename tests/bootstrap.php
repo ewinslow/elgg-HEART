@@ -1,3 +1,3 @@
 <?php
 
-// Do nothing, for now
+require_once dirname(__DIR__) . '/Elgg/engine/start.php';
