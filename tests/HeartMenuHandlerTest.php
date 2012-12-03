@@ -1,5 +1,4 @@
 <?php
-return;
 
 class HeartMenuHandlerTest extends PHPUnit_Framework_TestCase {
 	public function setUp() {
