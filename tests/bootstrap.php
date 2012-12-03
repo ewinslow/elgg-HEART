@@ -9,6 +9,6 @@ require_once "$plugin_root/Elgg/engine/settings.example.php";
 require_once "$plugin_root/Elgg/engine/lib/elgglib.php";
 
 // Register auto-load classes for 1.9
-require_once "$plugin_root/Elgg/engine/lib/autoloader.php";
+include_once "$plugin_root/Elgg/engine/lib/autoloader.php";
 
 elgg_register_classes("$plugin_root/classes");
