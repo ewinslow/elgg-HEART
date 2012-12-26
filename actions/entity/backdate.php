@@ -2,15 +2,14 @@
 
 $guid = get_input('guid');
 
-$month = get_input('publish_month');
-$day = get_input('publish_day');
-$year = get_input('publish_year');
+$published = get_input('published', false, false);
 
-$hour = get_input('publish_hour');
-$minute = get_input('publish_minute');
+if (!$published) {
+	register_error("Published time field is required");
+	forward(REFERER);
+}
 
-$time = "{$year}-{$month}-{$day}T{$hour}:{$minute}";
-$time_created = (int)strtotime($time);
+$time_created = (int)strtotime($published);
 
 $entity = get_entity($guid);
 
@@ -19,7 +18,7 @@ if (!$entity) {
 } elseif (!$entity->canEdit() || !in_array($entity->getSubtype(), array('blog', 'album'))) {
 	register_error('no permission');
 } elseif (!$time_created) {
-	register_error("could not parse the time ($time)");
+	register_error("could not parse the time ($published)");
 } else {
 	$entity->time_created = $time_created;
 	$entity->save();

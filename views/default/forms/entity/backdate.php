@@ -2,16 +2,14 @@
 
 $entity = $vars['entity'];
 
-echo elgg_view('input/datetime', array(
-	'name' => 'publish',
-	'value' => $entity->time_created,
-));
+?>
 
-echo elgg_view('input/hidden', array(
-	'name' => 'guid',
-	'value' => $entity->guid,
-));
+<div class="elgg-input-wrapper">
+	<label>New published time:</label><br/>
+	<input type="date" name="published" value="<?php echo date('Y-m-d', $entity->time_created); ?>" />
+</div>
 
-echo '<div class="elgg-foot">';
-echo elgg_view('input/submit');
-echo '</div>';
+<div class="elgg-foot">
+	<input type="hidden" name="guid" value="<?php echo $entity->guid; ?>" />
+	<button type="submit">Submit</button>
+</div>

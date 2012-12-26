@@ -43,6 +43,9 @@ function HEART_init() {
 
 	elgg_register_action('entity/backdate', dirname(__FILE__) . '/actions/entity/backdate.php');
 	
+	elgg_register_css('jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/redmond/jquery-ui.css');
+	elgg_load_css('jquery-ui');
+	
 	elgg_register_js('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js');
 	elgg_register_js('jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js');
 	elgg_register_js('elgg.backdate', 'mod/HEART/js/entity/backdate.js', 'footer');
