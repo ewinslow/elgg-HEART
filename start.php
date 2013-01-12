@@ -62,7 +62,6 @@ function HEART_init() {
 	elgg_extend_view('css/elgg', 'css/HEART/banners');
 	elgg_extend_view('css/elgg', 'css/HEART');
 
-	elgg_extend_view('page/elements/head', 'HEART/metatags', 1);
 	elgg_extend_view('page/elements/foot', 'facebook/jssdk');
 
 	elgg_register_ajax_view('form/entity/backdate');
