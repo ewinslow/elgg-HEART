@@ -54,6 +54,10 @@ body {
 	text-align: center;
 }
 
+.elgg-banner-promo p {
+	margin: 0;
+}
+
 img {
 	max-height: 100%;
 	max-width: 100%;
