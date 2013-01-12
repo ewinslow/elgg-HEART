@@ -4,6 +4,11 @@
 
 <p><em>Your information is safe: HEART uses PayPal for secure online transactions. All amounts are in U.S. Dollars.</em></p>
 
+<p>To maximize your donation's effect on the people of Kenya, donate to the General Fund:</p>
+
+<p><a href="https://www.paypal.com/cgi-bin/webscr?hosted_button_id=G49Y74KAAFQN2&cmd=_s-xclick" class="elgg-button elgg-button-special elgg-size-large">Donate to greatest need</a></p>
+
+<p>Finally, you can also donate to a specific project below:</p>
 <?php
 
 $donatable_projects = elgg_get_entities_from_metadata(array(
