@@ -10,6 +10,7 @@
  *   #6D2103 -- Dark brown
  *   #FFD57D -- Yellowish
  *   #FFEBBF -- Light yellowish
+ *   #64AAD0 -- Light blue
  */
 
 
@@ -42,6 +43,15 @@ body {
 
 .elgg-main {
 	padding: 0;
+}
+
+.elgg-banner-promo {
+	color: white;
+	background: #64AAD0;
+	line-height: 2.5em;
+	position: relative;
+	z-index: 1000;
+	text-align: center;
 }
 
 img {
