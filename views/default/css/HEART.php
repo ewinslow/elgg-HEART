@@ -19,6 +19,10 @@ body {
 	background-image: url(<?php echo elgg_get_site_url(); ?>mod/HEART/assets/graphics/bg_main.jpg);
 }
 
+.tidypics-wrapper-photo {
+	text-align: center;
+}
+
 .elgg-icon {
 	vertical-align: middle;
 }

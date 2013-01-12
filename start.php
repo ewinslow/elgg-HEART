@@ -129,8 +129,8 @@ function HEART_init() {
 	
 	elgg_register_menu_item('site', array(
 		'parent_name' => 'about',
-		'name' => 'team',
-		'text' => 'Our Team',
+		'name' => 'leadership',
+		'text' => 'Our Leadership',
 		'href' => '/leaderStaff.html',
 		'priority' => 22,
 	));
