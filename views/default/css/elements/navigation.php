@@ -183,7 +183,6 @@
 	font-family: "Trebuchet MS", Arial, sans-serif;
 	font-size: 130%;
 	position: relative;
-	top: -1px;
 }
 
 
