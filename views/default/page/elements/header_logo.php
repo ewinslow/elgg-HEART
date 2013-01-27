@@ -9,5 +9,7 @@ $site_name = $site->name;
 ?>
 
 <a href="<?php echo elgg_get_site_url(); ?>">
-	<img alt="HEART" src="http://africaheart.org/mod/HEART/assets/graphics/HEART-header-banner-2013-01-12.jpg" />
+	<img style="margin-bottom: -2px"
+	     alt="HEART: Empowering the people of Africa to survive the HIV/AIDS pandemic"
+             src="http://africaheart.org/mod/HEART/assets/graphics/HEART-header-banner-2013-01-12.jpg" />
 </a>

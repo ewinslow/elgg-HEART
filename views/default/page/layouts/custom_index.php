@@ -57,12 +57,12 @@ $oldProjects = array(
 	<?php foreach ($projects as $project): ?>
 	<li>
 		<div class="HEART-banners-caption">
-			<h3><?php echo $project['displayName']; ?></h3>
+			<h4><?php echo $project['displayName']; ?></h4>
 			<p><?php echo $project['summary']; ?></p>
 			<p>
 				<a href="<?php echo $project['url']; ?>"
-				   class="elgg-button elgg-button-large">
-					Get tickets today
+				   class="elgg-button elgg-button-special elgg-button-large">
+					Get tickets
 				</a>
 			</p>
 		</div>
