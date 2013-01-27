@@ -14,6 +14,7 @@
 .HEART-banners li {
 	background: #f5e7b6;
 	position: absolute;
+	width: 100%;
 	z-index: 0;
 }
 
