@@ -10,13 +10,23 @@
 
 
 $donateOptions = array(
-	'href' => 'http://africaheart.com/programsupport.html',
 	'text' => elgg_echo('donate'),
 	'class' => 'elgg-button elgg-button-special elgg-button-large',
 	'title' => 'Click me!',
 );
 
 $projects = array(
+	array(
+		'displayName' => 'HEART Fundraiser Dinner',
+		'url' => 'http://africaheart.org/events/heart-on-safari-2013',
+		'fullImage' => array(
+			'url' => elgg_normalize_url('/mod/HEART/assets/graphics/HEART-on-Safari-2013.jpg'),
+		),
+		'summary' => 'Join our Safari. Come see what\'s new.',
+	),
+);
+
+$oldProjects = array(
 	array(
 		'name' => 'WEEP',
 		'link' => elgg_normalize_url('/weep'),
@@ -47,19 +57,25 @@ $projects = array(
 	<?php foreach ($projects as $project): ?>
 	<li>
 		<div class="HEART-banners-caption">
-			<a href="<?php echo $project['link']; ?>"><h4><?php echo $project['name']; ?></h4></a>
-			<p><?php echo $project['briefdescription']; ?><p>
-			<?php
-				$donateOptions['href'] = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id={$project['paypalId']}";
-				echo elgg_view('output/url', $donateOptions);
-			?>
+			<h4><?php echo $project['displayName']; ?></h4>
+			<p><?php echo $project['summary']; ?></p>
+			<p>
+				<a href="<?php echo $project['url']; ?>"
+				   class="elgg-button elgg-button-special elgg-button-large">
+					Get tickets
+				</a>
+			</p>
 		</div>
-		<a href="<?php echo $project['link']; ?>">
-			<img src="<?php echo $project['iconUrl']; ?>" alt="" height="480" width="960" />
+		<a href="<?php echo $project['url']; ?>">
+			<img src="<?php echo $project['fullImage']['url']; ?>"
+			     alt="<?php echo $project['displayName']; ?>"
+                             title="<?php echo $project['displayName']; ?>"
+			     width="960" height="480" />
 		</a>
 	</li>
 	<?php endforeach; ?>
 </ul>
+
 <h2 class="HEART-heading-motto"><?php echo elgg_echo('HEART:motto'); ?></h2>
 <div class="elgg-grid pal">
 	<div class="elgg-col elgg-col-2of3 mrl">

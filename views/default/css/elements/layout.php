@@ -40,7 +40,7 @@
 }
 
 .elgg-page-topbar + .elgg-page {
-	padding-top: 25px;
+	padding-top: 24px;
 }
 
 /***** PAGE MESSAGES ******/
