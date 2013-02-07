@@ -6,7 +6,11 @@
 
 <p>To maximize your donation's effect on the people of Kenya, donate to the General Fund:</p>
 
-<p><a href="https://www.paypal.com/cgi-bin/webscr?hosted_button_id=G49Y74KAAFQN2&cmd=_s-xclick" class="elgg-button elgg-button-special elgg-size-large">Donate to greatest need</a></p>
+<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YJB9HRKX5JU7G" class="elgg-button elgg-button-special elgg-button-large">Donate to greatest need</a></p>
+
+<p>You can also donate to a specific person or team; just leave their name in the memo line before completing the donation:</p>
+
+<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8EAAHPVSS95E6" class="elgg-button elgg-button-special">Donate to person or team</a></p>
 
 <p>Finally, you can also donate to a specific project below:</p>
 <?php
