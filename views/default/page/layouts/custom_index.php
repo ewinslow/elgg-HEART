@@ -20,7 +20,7 @@ $projects = array(
 		'displayName' => 'HEART Fundraiser Dinner',
 		'url' => 'http://africaheart.org/events/heart-on-safari-2013',
 		'fullImage' => array(
-			'url' => elgg_normalize_url('/mod/HEART/assets/graphics/HEART-on-Safari-2013.jpg'),
+			'url' => elgg_normalize_url('/mod/HEART/assets/graphics/HEART-on-Safari-2013-v2.jpg'),
 		),
 		'summary' => 'Join our Safari. Come see what\'s new.',
 	),
@@ -70,7 +70,7 @@ $oldProjects = array(
 			<img src="<?php echo $project['fullImage']['url']; ?>"
 			     alt="<?php echo $project['displayName']; ?>"
                              title="<?php echo $project['displayName']; ?>"
-			     width="960" height="480" />
+			     width="960" />
 		</a>
 	</li>
 	<?php endforeach; ?>
